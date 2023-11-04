@@ -11,13 +11,18 @@ namespace PowerTecWeb
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class tbChamado
     {
         public int IdChamado { get; set; }
         public string Assunto { get; set; }
         public string Mensagem { get; set; }
+
+        [DisplayName("Data de chamado")]
         public System.DateTime Data_chamado { get; set; }
+
+        [DisplayName("Funcionário")]
         public Nullable<int> IdFuncionario { get; set; }
     
         public virtual tbFuncionario tbFuncionario { get; set; }

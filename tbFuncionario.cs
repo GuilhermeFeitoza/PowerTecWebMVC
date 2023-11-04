@@ -11,7 +11,8 @@ namespace PowerTecWeb
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class tbFuncionario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,23 +25,43 @@ namespace PowerTecWeb
             this.tbHolerite = new HashSet<tbHolerite>();
             this.tbPonto = new HashSet<tbPonto>();
         }
-    
+        
         public int IdFuncionario { get; set; }
+        [DisplayName("Nome completo")]
         public string Nome_completo { get; set; }
+        [DisplayName("CPF")]
         public string Cpf { get; set; }
         public string Rg { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
+        [DisplayName("Estado civil")]
         public string Estado_civil { get; set; }
         public decimal Salario { get; set; }
+
+        [DisplayName("Data admissão")]
         public System.DateTime Data_admissao { get; set; }
+
+        [DisplayName("Jornada de trabalho mensal")]
         public string Jornada_trabalho { get; set; }
+
+        [DisplayName("Tipo de contrato")]
         public string Tipo_contrato { get; set; }
+        [DisplayName("Agencia")]
         public string Banco_agencia { get; set; }
+        [DisplayName("Numero da conta")]
         public string Numero_conta { get; set; }
+
+        [DisplayName("Nivel de acesso")]
         public Nullable<int> NivelAcesso { get; set; }
+
+        [DisplayName("Cargo")]
         public Nullable<int> IdCargo { get; set; }
+        
+        [DisplayName("Nivel de acesso")]
         public Nullable<int> IdEndereco { get; set; }
+        
+        public string Usuario { get; set; }
+        public string Senha { get; set; }
     
         public virtual tbCargo tbCargo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

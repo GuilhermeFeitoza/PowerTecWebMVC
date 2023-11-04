@@ -1,0 +1,51 @@
+﻿@model PowerTecWeb.tbFerias
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ferias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Fim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Fim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aprovado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aprovado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbFuncionario.Nome_completo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdFerias }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

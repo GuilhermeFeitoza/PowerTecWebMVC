@@ -1,0 +1,139 @@
+﻿@model PowerTecWeb.tbHolerite
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Holerite</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario_base)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario_base)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horas_extras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horas_extras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comissoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comissoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Outros_proventos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Outros_proventos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_proventos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_proventos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plano_saude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plano_saude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vale_transporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vale_transporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_deducoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_deducoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor_liquido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor_liquido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ferias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ferias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aviso_previo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aviso_previo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beneficios_adicionais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beneficios_adicionais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Outras_Informacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Outras_Informacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbFuncionario.Nome_completo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdHolerite }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

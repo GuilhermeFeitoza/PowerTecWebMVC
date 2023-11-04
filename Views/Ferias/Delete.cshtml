@@ -1,0 +1,57 @@
+﻿@model PowerTecWeb.tbFerias
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Excluir</h2>
+
+<h3>Tem certeza que deseja excluir o item selecionado?</h3>
+<div>
+    <h4>Ferias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Fim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Fim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aprovado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aprovado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbFuncionario.Nome_completo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

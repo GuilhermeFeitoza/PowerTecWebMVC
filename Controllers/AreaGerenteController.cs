@@ -24,5 +24,9 @@ namespace PowerTecWeb.Controllers
         {
             return View();
         }
+        public ActionResult NovoFuncionario()
+        {
+            return View();
+        }
     }
 }

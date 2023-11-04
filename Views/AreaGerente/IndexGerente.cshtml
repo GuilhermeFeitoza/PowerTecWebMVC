@@ -14,22 +14,22 @@
     <div style="background-color:black; color:white; width: 100vw;">Meus Dados Pessoais</div>
     <div style="float:left; width: 30%;">
         <ul>
-            <li><a>Cargos</a></li>
-            <li><a>Departamentos</a></li>
-            <li><a>Funcionários</a></li>
-            <li><a>Aprovar Férias</a></li>
-            <li><a>Beneficios</a></li>
-            <li><a>Comprovantes de Pagamento</a></li>
+            <li><a>@Html.ActionLink("Cargos", "Index", "Cargos")</a></li>
+            <li><a>@Html.ActionLink("Departamento", "Index", "Departamentos")</a></li>
+            <li><a>@Html.ActionLink("Funcionários", "Index", "Funcionarios")</a></li>
+            <li><a>@Html.ActionLink("Aprovar férias", "Index", "Ferias")</a></li>
+            <li><a>@Html.ActionLink("Beneficios", "Index", "Beneficios")</a></li>
+            <li><a>@Html.ActionLink("Comprovante de pagamentos", "ComprovantePagamento", "AreaGerente")</a></li>
         </ul>
     </div>
     <div>
         <div style="float:right; width:70%;" class="text-center">
             <img src="~/Content/img/user.png" width="120" height="120" align="left" />
             <div>
-                <h2 style="padding-right:50%"> Antonio Benedito</h2>
+                <h2 style="padding-right:50%"> Frederico Benedito</h2>
                 <p>
-                    Assistente Administrativo I
-                    <br /> antonio.benedito@powertec.com.br
+                    Gerente
+                    <br /> frederico.benedito@powertec.com.br
                     <br /> +55 11 3738-6559
 
                 </p>

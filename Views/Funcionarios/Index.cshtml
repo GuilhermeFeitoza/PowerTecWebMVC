@@ -1,0 +1,118 @@
+﻿@model IEnumerable<PowerTecWeb.tbFuncionario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Funcionários</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome_completo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado_civil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_admissao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jornada_trabalho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo_contrato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Banco_agencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero_conta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NivelAcesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbCargo.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbEndereco.Logradouro)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome_completo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado_civil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_admissao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jornada_trabalho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo_contrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Banco_agencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero_conta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NivelAcesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbCargo.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbEndereco.Logradouro)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdFuncionario }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdFuncionario }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdFuncionario })
+        </td>
+    </tr>
+}
+
+</table>

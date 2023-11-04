@@ -11,13 +11,18 @@ namespace PowerTecWeb
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class tbFerias
     {
         public int IdFerias { get; set; }
+
+        [DisplayName("Data de inicio")]
         public System.DateTime Data_Inicio { get; set; }
+        [DisplayName("Data de fim")]
         public System.DateTime Data_Fim { get; set; }
         public string Aprovado { get; set; }
+        [DisplayName("Funcionário")]
         public Nullable<int> IdFuncionario { get; set; }
     
         public virtual tbFuncionario tbFuncionario { get; set; }

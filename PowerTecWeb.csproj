@@ -130,6 +130,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AreaColaboradorController.cs" />
     <Compile Include="Controllers\AreaGerenteController.cs" />
+    <Compile Include="Controllers\BeneficiosController.cs" />
+    <Compile Include="Controllers\CargosController.cs" />
+    <Compile Include="Controllers\ComprovantesPagamentoController.cs" />
+    <Compile Include="Controllers\DepartamentosController.cs" />
+    <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -183,7 +188,8 @@
     <Compile Include="tbPonto.cs">
       <DependentUpon>PowerTecModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Views\AreaGerente\DepartamentoController.cs" />
+    <Compile Include="Controllers\DepartamentoController.cs" />
+    <Compile Include="Controllers\FeriasController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -244,16 +250,41 @@
     <Content Include="Views\Home\Contato.cshtml" />
     <Content Include="Views\AreaColaborador\IndexColaborador.cshtml" />
     <Content Include="Views\Shared\_LayoutColaborador.cshtml" />
-    <Content Include="Views\AreaGerente\NovoCargo.cshtml" />
-    <Content Include="Views\AreaGerente\NovoDepartamento.cshtml" />
     <Content Include="Views\AreaGerente\IndexGerente.cshtml" />
+    <Content Include="Views\Ferias\SolicitarFerias.cshtml" />
+    <Content Include="Views\Ferias\Delete.cshtml" />
+    <Content Include="Views\Ferias\Details.cshtml" />
+    <Content Include="Views\Ferias\Edit.cshtml" />
+    <Content Include="Views\Ferias\Index.cshtml" />
+    <Content Include="Views\Beneficios\Create.cshtml" />
+    <Content Include="Views\Beneficios\Delete.cshtml" />
+    <Content Include="Views\Beneficios\Details.cshtml" />
+    <Content Include="Views\Beneficios\Edit.cshtml" />
+    <Content Include="Views\Beneficios\Index.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Create.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Delete.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Details.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Edit.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Index.cshtml" />
+    <Content Include="Views\Cargos\Create.cshtml" />
+    <Content Include="Views\Cargos\Delete.cshtml" />
+    <Content Include="Views\Cargos\Details.cshtml" />
+    <Content Include="Views\Cargos\Edit.cshtml" />
+    <Content Include="Views\Cargos\Index.cshtml" />
+    <Content Include="Views\Departamentos\Create.cshtml" />
+    <Content Include="Views\Departamentos\Delete.cshtml" />
+    <Content Include="Views\Departamentos\Details.cshtml" />
+    <Content Include="Views\Departamentos\Edit.cshtml" />
+    <Content Include="Views\Departamentos\Index.cshtml" />
+    <Content Include="Views\Funcionarios\Create.cshtml" />
+    <Content Include="Views\Funcionarios\Delete.cshtml" />
+    <Content Include="Views\Funcionarios\Details.cshtml" />
+    <Content Include="Views\Funcionarios\Edit.cshtml" />
+    <Content Include="Views\Funcionarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\AreaGerente\Cargo\" />
-    <Folder Include="Views\AreaGerente\Departamento\" />
-    <Folder Include="Views\AreaGerente\Funcionario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

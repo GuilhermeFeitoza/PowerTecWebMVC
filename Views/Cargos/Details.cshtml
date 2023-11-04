@@ -1,0 +1,75 @@
+﻿@model PowerTecWeb.tbCargo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario_base)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario_base)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beneficios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beneficios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carga_horaria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carga_horaria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_criacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_criacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbDepartamento.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbDepartamento.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCargo }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

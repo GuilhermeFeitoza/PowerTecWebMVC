@@ -1,0 +1,81 @@
+﻿@model PowerTecWeb.tbCargo
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Tem certeza que deseja excluir o item selecionado?</h3>
+<div>
+    <h4>Cargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario_base)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario_base)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beneficios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beneficios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carga_horaria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carga_horaria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_criacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_criacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbDepartamento.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbDepartamento.Nome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

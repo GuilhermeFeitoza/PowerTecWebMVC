@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PowerTecWeb.tbBeneficio>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Beneficios</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empresa_prestadora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empresa_prestadora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdBeneficio }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdBeneficio }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdBeneficio })
+        </td>
+    </tr>
+}
+
+</table>

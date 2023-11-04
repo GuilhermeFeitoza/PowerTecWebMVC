@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PowerTecWeb.tbCargo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Cargos</h2>
+
+<p>
+    @Html.ActionLink("Novo cargo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario_base)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beneficios)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carga_horaria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_criacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbDepartamento.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario_base)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Beneficios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carga_horaria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_criacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbDepartamento.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdCargo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdCargo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdCargo })
+        </td>
+    </tr>
+}
+
+</table>

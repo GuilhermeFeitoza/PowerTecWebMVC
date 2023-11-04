@@ -28,11 +28,31 @@ namespace PowerTecWeb.Views.AreaGerente
 
         // POST: Departamento/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(tbDepartamento departamento)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    
+                    using (PowerTecEntities db = new PowerTecEntities())
+                    {
+
+                        db.tbDepartamento.Add(departamento);
+                        db.SaveChanges();
+                        ModelState.Clear();
+                        departamento    = null;
+                        ViewBag.Mensagem = "Depatamento registrado com sucesso";
+
+                        return RedirectToAction("Index", "Home");
+
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+
 
                 return RedirectToAction("Index");
             }

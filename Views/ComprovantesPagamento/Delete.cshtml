@@ -1,0 +1,145 @@
+﻿@model PowerTecWeb.tbHolerite
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Tem certeza que deseja excluir o item selecionado?</h3>
+<div>
+    <h4>Comprovante de pagamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario_base)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario_base)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horas_extras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horas_extras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comissoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comissoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Outros_proventos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Outros_proventos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_proventos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_proventos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plano_saude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plano_saude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vale_transporte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vale_transporte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_deducoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_deducoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor_liquido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor_liquido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ferias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ferias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aviso_previo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aviso_previo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beneficios_adicionais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beneficios_adicionais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Outras_Informacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Outras_Informacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbFuncionario.Nome_completo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
