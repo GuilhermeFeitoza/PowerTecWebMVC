@@ -49,7 +49,7 @@ namespace PowerTecWeb.Controllers
         // obter mais detalhes, veja https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdFuncionario,Nome_completo,Cpf,Rg,Telefone,Email,Estado_civil,Salario,Data_admissao,Jornada_trabalho,Tipo_contrato,Banco_agencia,Numero_conta,NivelAcesso,IdCargo,IdEndereco")] tbFuncionario tbFuncionario)
+        public ActionResult Create([Bind(Include = "IdFuncionario,Nome_completo,Cpf,Rg,Telefone,Email,Estado_civil,Salario,Data_admissao,Jornada_trabalho,Tipo_contrato,Banco_agencia,Numero_conta,NivelAcesso,Usuario,Senha,IdCargo,IdEndereco")] tbFuncionario tbFuncionario)
         {
             if (ModelState.IsValid)
             {

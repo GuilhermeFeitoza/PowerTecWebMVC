@@ -11,8 +11,7 @@ namespace PowerTecWeb
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class tbBeneficio
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,8 +22,6 @@ namespace PowerTecWeb
     
         public int IdBeneficio { get; set; }
         public string Nome { get; set; }
-
-        [DisplayName("Empresa prestadora")]
         public string Empresa_prestadora { get; set; }
         public decimal Valor { get; set; }
     

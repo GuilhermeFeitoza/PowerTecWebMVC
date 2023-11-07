@@ -3,36 +3,52 @@
     ViewData["Title"] = "Area inicial colaborador";
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
-  <hr />
+<hr />
 
-   
+
 <div style="background-color:black; color:white; width: 100vw;">Meus Dados Pessoais</div>
-@*<div style="float:left; width: 30%;">
-    <ul>
-        <li><a>Meu Cadastro</a></li>
-        <li><a>Meus Chamados de Rh</a></li>
-        <li><a>Meu Ponto</a></li>
-        <li><a>Minhas Férias</a></li>
-        <li><a>Meus Beneficios</a></li>
-        <li><a>Meus Comprovantes de Pagamento</a></li>
-        <li><a>Minhas Declarações / Atualizar Carteira de Trabalho</a></li>
-    </ul>
-</div>*@
+@*<div style="float:left; width: 20%;">
+        <ul>
+            <li><a href="@Url.Action("Details","Funcionarios",new { id = Session["IdFuncionario"]})">Meu Cadastro</a></li>
+            <li><a>Meus Chamados de Rh</a></li>
+            <li><a>Meu Ponto</a></li>
+            <li><a>Minhas Férias</a></li>
+            <li><a>Meus Beneficios</a></li>
+            <li><a>Meus Comprovantes de Pagamento</a></li>
+            <li><a>Minhas Declarações / Atualizar Carteira de Trabalho</a></li>
+        </ul>
+    </div>*@
 
 
-    <div class="card flex-row flex-wrap">
-        <div class="card-header border-0">
-            <img src="//placehold.it/200" alt="">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="@Url.Action("Details","Funcionarios",new { id = Session["IdFuncionario"]})">Meu Cadastro</a></li>
+                <li class="list-group-item"><a>Meus Chamados de Rh</a></li>
+                <li class="list-group-item"><a>Meu Ponto</a></li>
+                <li class="list-group-item"><a>Minhas Férias</a></li>
+                <li class="list-group-item"><a>Meus Beneficios</a></li>
+                <li class="list-group-item"><a>Meus Comprovantes de Pagamento</a></li>
+                <li class="list-group-item"><a>Minhas Declarações / Atualizar Carteira de Trabalho</a></li>
+            </ul>
         </div>
-        <div class="card-block px-2">
-            <h4 class="card-title">Title</h4>
-            <p class="card-text">Description</p>
-            <a href="#" class="btn btn-primary">BUTTON</a>
-        </div>
-        <div class="w-100"></div>
-        <div class="card-footer w-100 text-muted">
-            Footer stating cats are CUTE little animals
+        <div class="col-md-8">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="//placehold.it/200" class="card-img" alt="Imagem do Usuário">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">@Session["Nome"]</h3>
+                            <p class="card-text">Alguma informação sobre o usuário. Pode ser um texto mais longo que descreve o perfil do usuário.</p>
+                            <p class="card-text"><small class="text-muted">Última Atualização: 06 de Novembro, 2023</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
+</div>
 

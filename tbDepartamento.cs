@@ -11,8 +11,7 @@ namespace PowerTecWeb
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class tbDepartamento
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,8 +24,6 @@ namespace PowerTecWeb
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public string Responsavel { get; set; }
-
-        [DisplayName("Data criação")]
         public System.DateTime Data_criacao { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

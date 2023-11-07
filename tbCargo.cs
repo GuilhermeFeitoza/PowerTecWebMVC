@@ -11,8 +11,7 @@ namespace PowerTecWeb
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class tbCargo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,16 +23,10 @@ namespace PowerTecWeb
         public int IdCargo { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
-        [DisplayName("Salário base")]
         public decimal Salario_base { get; set; }
         public string Beneficios { get; set; }
-        [DisplayName("Carga Horaria")]
         public string Carga_horaria { get; set; }
-
-        [DisplayName("Data criação")]
         public Nullable<System.DateTime> Data_criacao { get; set; }
-
-        [DisplayName("Departamento")]
         public Nullable<int> IdDepartamento { get; set; }
     
         public virtual tbDepartamento tbDepartamento { get; set; }

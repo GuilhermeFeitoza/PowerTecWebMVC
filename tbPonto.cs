@@ -11,23 +11,15 @@ namespace PowerTecWeb
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class tbPonto
     {
         public int IdPonto { get; set; }
-        [DisplayName("Data de entrada")]
         public Nullable<System.DateTime> Data_entrada { get; set; }
-
-        [DisplayName("Data de saída")]
         public Nullable<System.DateTime> Data_saida { get; set; }
-
-        [DisplayName("Saida para almoço")]
         public Nullable<System.DateTime> Saida_almoco { get; set; }
-        [DisplayName("Hora extra")]
         public string Hora_extra { get; set; }
         public string Feriado { get; set; }
-        [DisplayName("Funcionario")]
         public Nullable<int> IdFuncionario { get; set; }
     
         public virtual tbFuncionario tbFuncionario { get; set; }

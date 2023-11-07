@@ -11,16 +11,13 @@ namespace PowerTecWeb
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class tbDependente
     {
         public int IdDependente { get; set; }
         public string Nome { get; set; }
-        [DisplayName("Data de nascimento")]
         public System.DateTime Data_nascimento { get; set; }
         public string Cpf { get; set; }
-        [DisplayName("Funcionário")]
         public Nullable<int> IdFuncionario { get; set; }
     
         public virtual tbFuncionario tbFuncionario { get; set; }

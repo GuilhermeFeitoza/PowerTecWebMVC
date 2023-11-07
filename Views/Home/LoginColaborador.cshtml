@@ -1,26 +1,29 @@
-﻿@{
+﻿@model PowerTecWeb.tbFuncionario
+@{
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
 <hr />
 
 <div>
     <div class="form-group col-md-2 col-md-offset-5 align-center ">
-        <form>
+        @using (Html.BeginForm("VerificarLogin", "AreaColaborador", FormMethod.Post))
+        {
             <h1 class="h3 mb-3 font-weight-normal">PowerTec</h1>
             <h1 class="h3 mb-3 font-weight-normal">Login</h1>
             <label for="inputEmail" class="sr-only">Usuário</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
+            @*<input type="email" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>*@
+            @Html.TextBoxFor(m => Model.Usuario, new { @class = "form-control ls-login-bg-user input-lg", name = "Usuario", id = "txtUsuario", placeholder = "Digite seu Usuário", maxlength = "24" })
             <label for="inputPassword" class="sr-only">Senha</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            @Html.TextBoxFor(m => Model.Senha, new { @class = "form-control ls-login-bg-user input-lg", name = "Senha", id = "txtSenha", placeholder = "Digite sua Senha", maxlength = "14" })
             <div class="checkbox mb-3">
                 <label>
                     <input type="checkbox" value="remember-me"> Lembrar usuário
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-            @Html.ActionLink("Login", "IndexColaborador", "AreaColaborador", new { area = "" }, new { @class = "navbar-brand" })
-            @Html.ActionLink("Login gerente", "IndexGerente", "AreaGerente", new { area = "" }, new { @class = "navbar-brand" })
-        </form>
+            @*@Html.ActionLink("Login", "IndexColaborador", "AreaColaborador", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Login gerente", "IndexGerente", "AreaGerente", new { area = "" }, new { @class = "navbar-brand" })*@
+        }
     </div>
 </div>
 

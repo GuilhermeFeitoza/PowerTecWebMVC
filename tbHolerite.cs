@@ -11,45 +11,24 @@ namespace PowerTecWeb
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class tbHolerite
     {
         public int IdHolerite { get; set; }
         public string Periodo { get; set; }
-
-        [DisplayName("Salário base")]
         public decimal Salario_base { get; set; }
-        [DisplayName("Hora extra ")]
         public decimal Horas_extras { get; set; }
-        [DisplayName("Comissões")]
         public decimal Comissoes { get; set; }
-        [DisplayName("Outos proventos")]
         public decimal Outros_proventos { get; set; }
-
-        [DisplayName("Total de proventos")]
         public decimal Total_proventos { get; set; }
-        [DisplayName("Plano de saúde")]
         public decimal Plano_saude { get; set; }
-
-        [DisplayName("Vale transporte")]
         public Nullable<decimal> Vale_transporte { get; set; }
-        [DisplayName("Total de deduções")]
         public Nullable<decimal> Total_deducoes { get; set; }
-        [DisplayName("Valor liquido")]
         public decimal Valor_liquido { get; set; }
         public decimal Ferias { get; set; }
-
-        [DisplayName("Aviso prévio")]
         public Nullable<decimal> Aviso_previo { get; set; }
-
-        [DisplayName("Beneficios adicionais")]
         public decimal Beneficios_adicionais { get; set; }
-
-        [DisplayName("Outras informaçoes")]
         public string Outras_Informacoes { get; set; }
-
-        [DisplayName("Funcionário")]
         public Nullable<int> IdFuncionario { get; set; }
     
         public virtual tbFuncionario tbFuncionario { get; set; }
