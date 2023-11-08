@@ -10,35 +10,45 @@
     <title></title>
 </head>
 <body>
-
+    <hr />
     <div style="background-color:black; color:white; width: 100vw;">Meus Dados Pessoais</div>
-    <div style="float:left; width: 30%;">
-        <ul>
-            <li><a>@Html.ActionLink("Cargos", "Index", "Cargos")</a></li>
-            <li><a>@Html.ActionLink("Departamento", "Index", "Departamentos")</a></li>
-            <li><a>@Html.ActionLink("Funcionários", "Index", "Funcionarios")</a></li>
-            <li><a>@Html.ActionLink("Aprovar férias", "Index", "Ferias")</a></li>
-            <li><a>@Html.ActionLink("Beneficios", "Index", "Beneficios")</a></li>
-            <li><a>@Html.ActionLink("Comprovante de pagamentos", "ComprovantePagamento", "AreaGerente")</a></li>
-        </ul>
-    </div>
     <div>
-        <div style="float:right; width:70%;" class="text-center">
-            <img src="~/Content/img/user.png" width="120" height="120" align="left" />
-            <div>
-                <h2 style="padding-right:50%"> Frederico Benedito</h2>
-                <p>
-                    Gerente
-                    <br /> frederico.benedito@powertec.com.br
-                    <br /> +55 11 3738-6559
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"><a>@Html.ActionLink("Cargos", "Index", "Cargos")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Departamento", "Index", "Departamentos")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Funcionários", "Index", "Funcionarios")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Aprovar férias", "Index", "Ferias")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Beneficios", "Index", "Beneficios")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Comprovante de pagamentos", "ComprovantePagamento", "AreaGerente")</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="row no-gutters">
+                        <br>
+                        <div class="col-md-4" style="padding-left:10em;">
 
-                </p>
-                <span style="position:relative; top:0px;left:8vw"> Na empresa desde 03/04/2021</span>
+                            <img src="~/Content/img/user.png" height="200" width="200" class="card-img" alt="Imagem do Usuário">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title">@Session["Nome"]</h3>
+                                <h4 class="card-text">@Session["Cargo"]</h4>
+                                <h4 class="card-text">@Session["Email"]</h4>
+                                <h4 class="card-text">@Session["Telefone"]</h4>
+                                <p class="card-text"><small class="text-muted">Na empresa desde @Session["Desde"]</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
     </div>
+
+
+  
 
 </body>
 </html>

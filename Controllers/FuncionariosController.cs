@@ -35,6 +35,38 @@ namespace PowerTecWeb.Controllers
             }
             return View(tbFuncionario);
         }
+        public ActionResult MeuCadastro(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            tbFuncionario tbFuncionario = db.tbFuncionario.Find(id);
+            if (tbFuncionario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tbFuncionario);
+        }
+       
+        public ActionResult MeusChamados(int?id)
+        {
+            var tbChamado = db.tbChamado.Include(t => t.tbFuncionario);
+            tbChamado = tbChamado.Where(d => d.IdFuncionario == id);
+            return View(tbChamado.ToList());
+        }
+        public ActionResult Logout() {
+            Session.RemoveAll();
+            return RedirectToAction("Index","Home");
+        
+        }
+        public ActionResult MeuPonto(int? id)
+        {
+            var tbPonto = db.tbPonto.Include(t => t.tbFuncionario);
+            tbPonto = tbPonto.Where(d => d.IdFuncionario == id);
+            return View(tbPonto.ToList());
+        }
+
 
         // GET: Funcionarios/Create
         public ActionResult Create()

@@ -1,0 +1,138 @@
+﻿@model PowerTecWeb.tbFuncionario
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Meu Cadastro</h2>
+
+<div>
+    <h4>Funcionario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome_completo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_civil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado_civil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_admissao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_admissao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Jornada_trabalho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jornada_trabalho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo_contrato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_contrato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Banco_agencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Banco_agencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero_conta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero_conta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NivelAcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NivelAcesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbCargo.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbCargo.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbEndereco.Logradouro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbEndereco.Logradouro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Voltar", "IndexColaborador","AreaColaborador")
+</p>

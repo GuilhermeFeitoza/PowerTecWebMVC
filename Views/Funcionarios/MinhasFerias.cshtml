@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PowerTecWeb.tbFerias>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Ferias</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Inicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Fim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aprovado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_Inicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_Fim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aprovado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdFerias }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IdFerias }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.IdFerias })
+        </td>
+    </tr>
+}
+
+</table>

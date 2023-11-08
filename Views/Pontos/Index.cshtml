@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PowerTecWeb.tbPonto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_entrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_saida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saida_almoco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora_extra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Feriado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_entrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_saida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Saida_almoco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora_extra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Feriado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdPonto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdPonto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdPonto })
+        </td>
+    </tr>
+}
+
+</table>

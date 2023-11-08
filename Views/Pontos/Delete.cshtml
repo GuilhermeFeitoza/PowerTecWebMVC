@@ -1,0 +1,73 @@
+﻿@model PowerTecWeb.tbPonto
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbPonto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Saida_almoco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Saida_almoco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora_extra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora_extra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Feriado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Feriado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbFuncionario.Nome_completo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

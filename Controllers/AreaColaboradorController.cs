@@ -33,6 +33,11 @@ namespace PowerTecWeb.Controllers
                     {
                         Session["IdFuncionario"] = Convert.ToInt32(v.IdFuncionario);
                         Session["Nome"] = Convert.ToString(v.Nome_completo);
+                        Session["Cargo"] = db.tbCargo.Where(a => a.IdCargo == v.IdCargo).FirstOrDefault().Nome;
+                        Session["Email"] = v.Email.ToString();
+                        Session["Telefone"] = v.Telefone.ToString();
+                        Session["Desde"] = v.Data_admissao.ToString("dd/MM/yyyy");
+
                         if ( v.NivelAcesso == 0)
                         {
                             return RedirectToAction("IndexColaborador", "AreaColaborador");

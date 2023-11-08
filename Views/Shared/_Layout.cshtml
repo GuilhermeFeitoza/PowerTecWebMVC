@@ -1,45 +1,47 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PowerTec</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body style="margin-top:5%">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body>
+    <nav class="navbar navbar-fixed-top" style="background-color:red;">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <div class="">
+                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("PowerTec", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Quem Somos", "QuemSomos", "Home")</li>
-                    <li>@Html.ActionLink("Pessoas", "Pessoas", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contato", "Home")</li>
-                   
+                    <li class="nav-link">@Html.ActionLink("Quem Somos", "QuemSomos", "Home")</li>
+                    <li class="nav-link">@Html.ActionLink("Pessoas", "Pessoas", "Home")</li>
+                    <li class="nav-link">@Html.ActionLink("Contato", "Contato", "Home")</li>
+
 
                 </ul>
             </div>
         </div>
-    </div>
-    <div >
+    </nav>
+    <div>
         @RenderBody()
         <hr />
-            <footer class="footer fixed-bottom">
+        <footer class="footer">
+            <div class="container-fluid">
                 <h2>Entre em Contato Conosco</h2>
                 <p>Fale conosco para saber mais sobre como podemos ajudar sua empresa a alcançar o sucesso.</p>
                 <a href="contato@powertech.com" id="contact-link">contato@powertech.com</a>
                 <p>&copy; @DateTime.Now.Year - PowerTech. Todos os direitos reservados.</p>
-            </footer>
+            </div>
+        </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

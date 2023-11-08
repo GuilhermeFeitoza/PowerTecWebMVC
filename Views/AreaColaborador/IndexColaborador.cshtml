@@ -4,29 +4,14 @@
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
 <hr />
-
-
-<div style="background-color:black; color:white; width: 100vw;">Meus Dados Pessoais</div>
-@*<div style="float:left; width: 20%;">
-        <ul>
-            <li><a href="@Url.Action("Details","Funcionarios",new { id = Session["IdFuncionario"]})">Meu Cadastro</a></li>
-            <li><a>Meus Chamados de Rh</a></li>
-            <li><a>Meu Ponto</a></li>
-            <li><a>Minhas Férias</a></li>
-            <li><a>Meus Beneficios</a></li>
-            <li><a>Meus Comprovantes de Pagamento</a></li>
-            <li><a>Minhas Declarações / Atualizar Carteira de Trabalho</a></li>
-        </ul>
-    </div>*@
-
-
-<div class="container">
+<div class="text-center" style="background-color:black; color:white; width: 100vw;">Meus Dados Pessoais</div>
+<div >
     <div class="row">
         <div class="col-md-4">
             <ul class="list-group">
-                <li class="list-group-item"><a href="@Url.Action("Details","Funcionarios",new { id = Session["IdFuncionario"]})">Meu Cadastro</a></li>
-                <li class="list-group-item"><a>Meus Chamados de Rh</a></li>
-                <li class="list-group-item"><a>Meu Ponto</a></li>
+                <li class="list-group-item"><a href="@Url.Action("MeuCadastro","Funcionarios",new { id = Session["IdFuncionario"]})">Meu Cadastro</a></li>
+                <li class="list-group-item"><a href="@Url.Action("MeusChamados","Funcionarios",new { id = Session["IdFuncionario"]})">Meus Chamados de Rh</a></li>
+                <li class="list-group-item"><a href="@Url.Action("MeuPonto","Funcionarios",new { id = Session["IdFuncionario"]})">Meu Ponto</a></li>
                 <li class="list-group-item"><a>Minhas Férias</a></li>
                 <li class="list-group-item"><a>Meus Beneficios</a></li>
                 <li class="list-group-item"><a>Meus Comprovantes de Pagamento</a></li>
@@ -36,14 +21,18 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="//placehold.it/200" class="card-img" alt="Imagem do Usuário">
+                    <br>
+                    <div class="col-md-4" style="padding-left:10em;">
+
+                        <img src="~/Content/img/user.png" height="200" width="200" class="card-img" alt="Imagem do Usuário">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h3 class="card-title">@Session["Nome"]</h3>
-                            <p class="card-text">Alguma informação sobre o usuário. Pode ser um texto mais longo que descreve o perfil do usuário.</p>
-                            <p class="card-text"><small class="text-muted">Última Atualização: 06 de Novembro, 2023</small></p>
+                            <h4 class="card-text">@Session["Cargo"]</h4>
+                            <h4 class="card-text">@Session["Email"]</h4>
+                            <h4 class="card-text">@Session["Telefone"]</h4>
+                            <p class="card-text"><small class="text-muted">Na empresa desde @Session["Desde"]</small></p>
                         </div>
                     </div>
                 </div>

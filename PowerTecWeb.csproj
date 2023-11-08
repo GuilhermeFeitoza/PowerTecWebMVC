@@ -136,6 +136,8 @@
     <Compile Include="Controllers\DepartamentosController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ChamadosController.cs" />
+    <Compile Include="Controllers\PontosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -281,6 +283,21 @@
     <Content Include="Views\Funcionarios\Details.cshtml" />
     <Content Include="Views\Funcionarios\Edit.cshtml" />
     <Content Include="Views\Funcionarios\Index.cshtml" />
+    <Content Include="Views\Funcionarios\MeuCadastro.cshtml" />
+    <Content Include="Views\Chamados\Create.cshtml" />
+    <Content Include="Views\Chamados\Delete.cshtml" />
+    <Content Include="Views\Chamados\Details.cshtml" />
+    <Content Include="Views\Chamados\Edit.cshtml" />
+    <Content Include="Views\Chamados\Index.cshtml" />
+    <Content Include="Views\Funcionarios\MeusChamados.cshtml" />
+    <Content Include="Views\Pontos\Create.cshtml" />
+    <Content Include="Views\Pontos\Delete.cshtml" />
+    <Content Include="Views\Pontos\Details.cshtml" />
+    <Content Include="Views\Pontos\Edit.cshtml" />
+    <Content Include="Views\Pontos\Index.cshtml" />
+    <Content Include="Views\Funcionarios\MeuPonto.cshtml" />
+    <Content Include="Views\Funcionarios\MinhasFerias.cshtml" />
+    <Content Include="Views\Funcionarios\MeusComprovantesPagamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
