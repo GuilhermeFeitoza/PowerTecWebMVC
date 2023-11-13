@@ -3,7 +3,24 @@
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
 <hr />
+<script>
 
+
+    function checkSenha() {
+    let params = new URLSearchParams(document.location.search);
+    let valid = params.get("valid"); // is the string "Jonathan"
+        if (valid != null) {
+
+            document.getElementById("senhainvalida").innerText = "Usuário/Senha inválidos.";
+
+        } else {
+            document.getElementById("senhainvalida").innerText= "";
+        }
+    }
+
+    window.onload = checkSenha;
+
+</script>
 <div>
     <p class="text-center">Digite o seu nome de usuario e senha para estabelecer login</p>
     <div class="form-group col-md-2 col-md-offset-5 align-center ">
@@ -21,8 +38,9 @@
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-            @*@Html.ActionLink("Login", "IndexColaborador", "AreaColaborador", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Login gerente", "IndexGerente", "AreaGerente", new { area = "" }, new { @class = "navbar-brand" })*@
+            <p id="senhainvalida"></p>
+
+
         }
     </div>
 </div>

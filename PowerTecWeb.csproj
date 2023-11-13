@@ -131,6 +131,7 @@
     <Compile Include="Controllers\AreaColaboradorController.cs" />
     <Compile Include="Controllers\AreaGerenteController.cs" />
     <Compile Include="Controllers\BeneficiosController.cs" />
+    <Compile Include="Controllers\BeneficiosFuncionarioController.cs" />
     <Compile Include="Controllers\CargosController.cs" />
     <Compile Include="Controllers\ComprovantesPagamentoController.cs" />
     <Compile Include="Controllers\DepartamentosController.cs" />
@@ -198,6 +199,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\font-awesome.css" />
+    <Content Include="Content\fonts\font-awesome.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\img\reuniao-corporativa.jpg" />
     <Content Include="Content\img\user.png" />
     <Content Include="favicon.ico" />
@@ -223,6 +227,11 @@
     <Content Include="PowerTecModel.edmx.diagram">
       <DependentUpon>PowerTecModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -297,7 +306,12 @@
     <Content Include="Views\Pontos\Index.cshtml" />
     <Content Include="Views\Funcionarios\MeuPonto.cshtml" />
     <Content Include="Views\Funcionarios\MinhasFerias.cshtml" />
-    <Content Include="Views\Funcionarios\MeusComprovantesPagamento.cshtml" />
+    <Content Include="Views\Funcionarios\MeusComprovantes.cshtml" />
+    <Content Include="Views\BeneficiosFuncionario\Create.cshtml" />
+    <Content Include="Views\BeneficiosFuncionario\Details.cshtml" />
+    <Content Include="Views\BeneficiosFuncionario\Edit.cshtml" />
+    <Content Include="Views\BeneficiosFuncionario\Index.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\MeusComprovantes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,35 @@
+﻿@model PowerTecWeb.tbFuncionarioBeneficio
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbFuncionarioBeneficio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tbBeneficio.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbBeneficio.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbFuncionario.Nome_completo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdFuncionarioBeneficio }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

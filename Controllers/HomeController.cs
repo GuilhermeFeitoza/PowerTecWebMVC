@@ -29,10 +29,12 @@ namespace PowerTecWeb.Controllers
 
         public ActionResult LoginColaborador()
         {
-            ViewBag.Message = "Your contact page.";
-
+           
             return View();
+          
         }
+   
+
 
         public ActionResult Contato()
         {
@@ -42,7 +44,6 @@ namespace PowerTecWeb.Controllers
         }
         public ActionResult IndexColaborador()
         {
-
             return View();
         }
 

@@ -8,7 +8,16 @@
 .dl-horizontal dt {
     white-space: normal;
 }
+.carousel .item {
+    height: 500px;
+}
 
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -167,7 +176,7 @@ ul.nav a:hover {
         }
 
 .highlight {
-    color: #2ac5ed;
+    color: #ff3300;
     font-weight: bold;
 }           
 

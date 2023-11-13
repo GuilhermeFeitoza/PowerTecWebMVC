@@ -2,26 +2,70 @@
     ViewBag.Title = "Home Page";
 }
 
-
 <div class="header">
 
 
     <header class="header">
         <h1 style="font-size:40px;">Bem-vindo à PowerTech</h1>
         <h2>Transformando a Gestão de Software para Empresas</h2>
-     
+
     </header>
     <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="position-relative">
-                        <img src="~/Content/img/reuniao-corporativa.jpg" alt="Imagem de fundo" class="img-fluid mx-auto d-block" />
-                        @*<h1 class="text-lg-center">Este é um grande texto no meio da imagem</h1>*@
+        <div>
+        <!-- Carousel Default -->
+        <section class="carousel-default">
+            <div id="carousel-default" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-default" data-slide-to="0" class=""></li>
+                    <li data-target="#carousel-default" data-slide-to="1" class=""></li>
+                    <li data-target="#carousel-default" data-slide-to="2" class="active"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <!-- NOTE: Bootstrap v4 changes class name to carousel-item -->
+                    <div class="item">
+                        <img src="~/Content/img/sistema.jpg" style="filter: blur(5px);" alt="First slide">
+                        <div class="carousel-caption">
+                            <h3><b>Inovação em cada linha de código.</b></h3>
+                            <p><b>Buscamos sempre a inovação dos nossos sistemas alinhados ao mercado</b></p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="~/Content/img/gestao.jpg" style="filter: blur(5px);" alt="Second slide">
+                        <div class="carousel-caption">
+                            <h3><b>Sistemas robustos, gestão eficaz.</b></h3>
+                            <p><b>A gestão que sua empresa precisa</b></p>
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <img src="~/Content/img/gestao2.jpg" style="filter: blur(5px);" alt="Third slide">
+                        <div class="carousel-caption">
+                            <h3><b>O poder da tecnologia a serviço da gestão</b></h3>
+                            <p><b>Impulsionamos com o poder da tecnologia a sua gestão</b></p>
+                        </div>
                     </div>
                 </div>
+                <a class="left carousel-control" href="#carousel-default" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-default" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- /end Carousel Default -->
+        <!--<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="position-relative">
+                <img src="~/Content/img/reuniao-corporativa.jpg" alt="Imagem de fundo" class="img-fluid mx-auto d-block" />-->
+        @*<h1 class="text-lg-center">Este é um grande texto no meio da imagem</h1>*@
+        <!--</div>
             </div>
         </div>
+    </div>-->
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
             <div class="container">
@@ -55,3 +99,5 @@
         </div>
     </div>
 
+</div>
+</div>

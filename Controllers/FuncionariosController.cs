@@ -48,6 +48,16 @@ namespace PowerTecWeb.Controllers
             }
             return View(tbFuncionario);
         }
+
+        public ActionResult MeusComprovantes(int? id) {
+
+            var tbHolerite = db.tbHolerite.Include(t => t.tbFuncionario);
+            return View(tbHolerite.Where(d=>d.IdFuncionario == id).ToList());
+
+
+
+
+        }
        
         public ActionResult MeusChamados(int?id)
         {
@@ -55,6 +65,14 @@ namespace PowerTecWeb.Controllers
             tbChamado = tbChamado.Where(d => d.IdFuncionario == id);
             return View(tbChamado.ToList());
         }
+
+        public ActionResult MinhasFerias(int? id)
+        {
+            var tbFerias = db.tbFerias.Include(t => t.tbFuncionario);
+            tbFerias = tbFerias.Where(d => d.IdFuncionario == id);
+            return View(tbFerias.ToList());
+        }
+
         public ActionResult Logout() {
             Session.RemoveAll();
             return RedirectToAction("Index","Home");

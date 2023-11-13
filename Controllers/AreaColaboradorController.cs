@@ -17,9 +17,16 @@ namespace PowerTecWeb.Controllers
         public ActionResult IndexColaborador()
         {
 
-            
 
-            return View();
+            if (Session["IdFuncionario"] != null)
+            {
+                return View();
+            }
+            else
+            {
+
+                return RedirectToAction("LoginColaborador", "Home");
+            }
         }
 
         public ActionResult VerificarLogin(tbFuncionario log)
@@ -28,7 +35,7 @@ namespace PowerTecWeb.Controllers
             {
                 using (PowerTecEntities db = new PowerTecEntities())
                 {
-                    var v = db.tbFuncionario.Where(a => a.Usuario.Equals(log.Usuario) && log.Senha.Equals(log.Senha)).FirstOrDefault();
+                    var v = db.tbFuncionario.Where(a => a.Usuario.Equals(log.Usuario) && a.Senha.Equals(log.Senha)).FirstOrDefault();
                     if (v != null)
                     {
                         Session["IdFuncionario"] = Convert.ToInt32(v.IdFuncionario);
@@ -37,23 +44,18 @@ namespace PowerTecWeb.Controllers
                         Session["Email"] = v.Email.ToString();
                         Session["Telefone"] = v.Telefone.ToString();
                         Session["Desde"] = v.Data_admissao.ToString("dd/MM/yyyy");
+                        Session["Nivel"] = v.NivelAcesso;
 
-                        if ( v.NivelAcesso == 0)
-                        {
+                      
                             return RedirectToAction("IndexColaborador", "AreaColaborador");
-                        }
-                        else if (v.NivelAcesso == 1)
-                        {
-                            return RedirectToAction("IndexGerente", "AreaGerente");
-
-                        }
+                       
                       
                         
                     }
                     else
                     {
-                        ViewData["LoginApresenta"] = "Login e/ou senha invalido";
-                        return RedirectToAction("LoginColaborador", "Home");
+                        
+                        return RedirectToAction("LoginColaborador", "Home",new {  valid = false}); ;
                     }
                 }
             }

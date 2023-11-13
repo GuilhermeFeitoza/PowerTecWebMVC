@@ -12,11 +12,22 @@
                 <li class="list-group-item"><a href="@Url.Action("MeuCadastro","Funcionarios",new { id = Session["IdFuncionario"]})">Meu Cadastro</a></li>
                 <li class="list-group-item"><a href="@Url.Action("MeusChamados","Funcionarios",new { id = Session["IdFuncionario"]})">Meus Chamados de Rh</a></li>
                 <li class="list-group-item"><a href="@Url.Action("MeuPonto","Funcionarios",new { id = Session["IdFuncionario"]})">Meu Ponto</a></li>
-                <li class="list-group-item"><a>Minhas Férias</a></li>
-                <li class="list-group-item"><a>Meus Beneficios</a></li>
-                <li class="list-group-item"><a>Meus Comprovantes de Pagamento</a></li>
-                <li class="list-group-item"><a>Minhas Declarações / Atualizar Carteira de Trabalho</a></li>
+                <li class="list-group-item"><a href="@Url.Action("MinhasFerias","Funcionarios",new { id = Session["IdFuncionario"]})">Minhas Férias</a></li>
+                <li class="list-group-item"><a href="@Url.Action("Index","BeneficiosFuncionario",new { id = Session["IdFuncionario"]})">Meus Beneficios</a></li>
+                <li class="list-group-item"><a href="@Url.Action("MeusComprovantes","Funcionarios",new { id = Session["IdFuncionario"]})">Meus Comprovantes de Pagamento</a></li>
+                <li class="list-group-item"><a href="@Url.Action("Minhas declarações","Funcionarios",new { id = Session["IdFuncionario"]})">Minhas Declarações / Atualizar Carteira de Trabalho</a></li>
             </ul>
+            @if (Convert.ToInt32(Session["Nivel"]) == 1) { 
+            <h4>Gerente</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><a>@Html.ActionLink("Cargos", "Index", "Cargos")</a></li>
+                <li class="list-group-item"><a>@Html.ActionLink("Departamento", "Index", "Departamentos")</a></li>
+                <li class="list-group-item"><a>@Html.ActionLink("Funcionários", "Index", "Funcionarios")</a></li>
+                <li class="list-group-item"><a>@Html.ActionLink("Aprovar férias", "Index", "Ferias")</a></li>
+                <li class="list-group-item"><a>@Html.ActionLink("Beneficios", "Index", "Beneficios")</a></li>
+                <li class="list-group-item"><a>@Html.ActionLink("Comprovante de pagamentos", "ComprovantePagamento", "AreaGerente")</a></li>
+            </ul>
+            }
         </div>
         <div class="col-md-8">
             <div class="card">
@@ -31,7 +42,7 @@
                             <h3 class="card-title">@Session["Nome"]</h3>
                             <h4 class="card-text">@Session["Cargo"]</h4>
                             <h4 class="card-text">@Session["Email"]</h4>
-                            <h4 class="card-text">@Session["Telefone"]</h4>
+                            <h4 id="telefone" class="card-text">@Session["Telefone"]</h4>
                             <p class="card-text"><small class="text-muted">Na empresa desde @Session["Desde"]</small></p>
                         </div>
                     </div>
@@ -41,3 +52,9 @@
     </div>
 </div>
 
+
+<script>
+
+
+    
+</script>
