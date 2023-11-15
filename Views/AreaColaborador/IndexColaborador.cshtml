@@ -5,7 +5,7 @@
 }
 <hr />
 <div class="text-center" style="background-color:black; color:white; width: 100vw;">Meus Dados Pessoais</div>
-<div >
+<div>
     <div class="row">
         <div class="col-md-4">
             <ul class="list-group">
@@ -17,16 +17,17 @@
                 <li class="list-group-item"><a href="@Url.Action("MeusComprovantes","Funcionarios",new { id = Session["IdFuncionario"]})">Meus Comprovantes de Pagamento</a></li>
                 <li class="list-group-item"><a href="@Url.Action("Minhas declarações","Funcionarios",new { id = Session["IdFuncionario"]})">Minhas Declarações / Atualizar Carteira de Trabalho</a></li>
             </ul>
-            @if (Convert.ToInt32(Session["Nivel"]) == 1) { 
-            <h4>Gerente</h4>
-            <ul class="list-group">
-                <li class="list-group-item"><a>@Html.ActionLink("Cargos", "Index", "Cargos")</a></li>
-                <li class="list-group-item"><a>@Html.ActionLink("Departamento", "Index", "Departamentos")</a></li>
-                <li class="list-group-item"><a>@Html.ActionLink("Funcionários", "Index", "Funcionarios")</a></li>
-                <li class="list-group-item"><a>@Html.ActionLink("Aprovar férias", "Index", "Ferias")</a></li>
-                <li class="list-group-item"><a>@Html.ActionLink("Beneficios", "Index", "Beneficios")</a></li>
-                <li class="list-group-item"><a>@Html.ActionLink("Comprovante de pagamentos", "ComprovantePagamento", "AreaGerente")</a></li>
-            </ul>
+            @if (Convert.ToInt32(Session["Nivel"]) == 1)
+            {
+                <h4>Gerente</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><a>@Html.ActionLink("Cargos", "Index", "Cargos")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Departamento", "Index", "Departamentos")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Funcionários", "Index", "Funcionarios")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Aprovar férias", "Index", "Ferias")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Beneficios", "Index", "Beneficios")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Comprovante de pagamentos", "ComprovantePagamento", "AreaGerente")</a></li>
+                </ul>
             }
         </div>
         <div class="col-md-8">
@@ -55,6 +56,29 @@
 
 <script>
 
+    window.onload = mascaraDeTelefone;
+    function mascaraDeTelefone() {
+        const textoAtual = document.getElementById("telefone").innerText;
+        const isCelular = textoAtual.length === 11;
+        let textoAjustado;
+        if (isCelular) {
+            const ddd = textoAtual.slice(0, 2);
+            const parte1 = textoAtual.slice(2, 7);
+            const parte2 = textoAtual.slice(7, 11);
+            textoAjustado = `(${ddd})${parte1}-${parte2}`
+        } else {
+            const parte1 = textoAtual.slice(0, 4);
+            const parte2 = textoAtual.slice(4, 8);
+            textoAjustado = `${parte1}-${parte2}`
+        }
+        document.getElementById("telefone").innerText = textoAjustado;
+    }
 
-    
+    function tiraHifen(telefone) {
+        const textoAtual = telefone.value;
+        const textoAjustado = textoAtual.replace(/\-/g, '');
+
+        telefone.value = textoAjustado;
+    }
+
 </script>

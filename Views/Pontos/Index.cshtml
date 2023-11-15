@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Meu Ponto</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Lançar ponto", "Create")
 </p>
 <table class="table">
     <tr>
@@ -54,9 +54,8 @@
             @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdPonto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdPonto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdPonto })
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdPonto }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IdPonto }) |
         </td>
     </tr>
 }
