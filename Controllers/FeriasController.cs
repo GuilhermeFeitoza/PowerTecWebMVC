@@ -39,7 +39,7 @@ namespace PowerTecWeb.Views.AreaGerente
         // GET: Ferias/Create
         public ActionResult SolicitarFerias()
         {
-            ViewBag.IdFuncionario = new SelectList(db.tbFuncionario, "IdFuncionario", "Nome_completo");
+            ViewBag.IdFuncionario = new SelectList(db.tbFuncionario, "IdFuncionario", "Nome_completo",Session["IdFuncionario"]);
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace PowerTecWeb.Views.AreaGerente
             }
 
             ViewBag.IdFuncionario = new SelectList(db.tbFuncionario, "IdFuncionario", "Nome_completo", tbFerias.IdFuncionario);
-            return View(tbFerias);
+            return RedirectToAction("IndexColaborador","AreaColaborador");
         }
 
         // GET: Ferias/Edit/5

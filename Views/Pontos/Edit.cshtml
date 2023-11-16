@@ -5,15 +5,14 @@
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Alteração</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>tbPonto</h4>
-        <hr />
+                <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.IdPonto)
 
@@ -60,7 +59,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdFuncionario, "IdFuncionario", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdFuncionario", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("IdFuncionario", null, htmlAttributes: new { @class = "form-control" , @disabled = "disabled" })
                 @Html.ValidationMessageFor(model => model.IdFuncionario, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -74,5 +73,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "IndexColaborador","AreaColaborador")
 </div>

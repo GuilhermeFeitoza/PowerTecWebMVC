@@ -54,8 +54,8 @@
             @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdPonto }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.IdPonto }) |
+            <a href="@Url.Action("Edit","Pontos",new { id = item.IdPonto})">Editar |</a>
+            <a href="@Url.Action("Details","Pontos",new { id = item.IdPonto})">Detalhes |</a>
         </td>
     </tr>
 }

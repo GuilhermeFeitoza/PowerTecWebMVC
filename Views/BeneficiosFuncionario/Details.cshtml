@@ -5,11 +5,10 @@
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>tbFuncionarioBeneficio</h4>
-    <hr />
+        <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.tbBeneficio.Nome)
@@ -30,6 +29,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdFuncionarioBeneficio }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdFuncionarioBeneficio }) |
+    @Html.ActionLink("Voltar", "IndexColaborador","AreaColaborador")
 </p>

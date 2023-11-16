@@ -39,7 +39,7 @@ namespace PowerTecWeb.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("LoginColaborador","Home");
             }
             tbFuncionario tbFuncionario = db.tbFuncionario.Find(id);
             if (tbFuncionario == null)
@@ -50,6 +50,10 @@ namespace PowerTecWeb.Controllers
         }
 
         public ActionResult MeusComprovantes(int? id) {
+            if (id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
 
             var tbHolerite = db.tbHolerite.Include(t => t.tbFuncionario);
             return View(tbHolerite.Where(d=>d.IdFuncionario == id).ToList());
@@ -61,6 +65,10 @@ namespace PowerTecWeb.Controllers
        
         public ActionResult MeusChamados(int?id)
         {
+            if(id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
             var tbChamado = db.tbChamado.Include(t => t.tbFuncionario);
             tbChamado = tbChamado.Where(d => d.IdFuncionario == id);
             return View(tbChamado.ToList());
@@ -68,6 +76,10 @@ namespace PowerTecWeb.Controllers
 
         public ActionResult MinhasFerias(int? id)
         {
+            if (id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
             var tbFerias = db.tbFerias.Include(t => t.tbFuncionario);
             tbFerias = tbFerias.Where(d => d.IdFuncionario == id);
             return View(tbFerias.ToList());
@@ -80,6 +92,10 @@ namespace PowerTecWeb.Controllers
         }
         public ActionResult MeuPonto(int? id)
         {
+            if (id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
             var tbPonto = db.tbPonto.Include(t => t.tbFuncionario);
             tbPonto = tbPonto.Where(d => d.IdFuncionario == id);
             return View(tbPonto.ToList());

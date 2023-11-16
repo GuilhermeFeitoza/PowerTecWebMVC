@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
 
-<h2>Ferias</h2>
+<h2>Minhas férias</h2>
 
 <p>
     @Html.ActionLink("Solicitar férias", "SolicitarFerias","Ferias")
@@ -42,9 +42,8 @@
             @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdFerias }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.IdFerias }) |
-            @Html.ActionLink("Deletar", "Delete", new { id=item.IdFerias })
+            <a href="@Url.Action("Edit", "Ferias", new { id = item.IdFerias })">Editar</a>  |
+            <a href="@Url.Action("Details", "Ferias", new { id = item.IdFerias })"> Detalhes </a>
         </td>
     </tr>
 }

@@ -110,6 +110,7 @@
           <Property Name="IdFuncionarioBeneficio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdFuncionario" Type="int" />
           <Property Name="IdBeneficio" Type="int" />
+          <Property Name="Aprovado" Type="char" MaxLength="1" />
         </EntityType>
         <EntityType Name="tbHolerite">
           <Key>
@@ -137,9 +138,9 @@
             <PropertyRef Name="IdPonto" />
           </Key>
           <Property Name="IdPonto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Data_entrada" Type="date" />
-          <Property Name="Data_saida" Type="date" />
-          <Property Name="Saida_almoco" Type="date" />
+          <Property Name="Data_entrada" Type="datetime" />
+          <Property Name="Data_saida" Type="datetime" />
+          <Property Name="Saida_almoco" Type="datetime" />
           <Property Name="Hora_extra" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="Feriado" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="IdFuncionario" Type="int" />
@@ -192,7 +193,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbFuncion__IdBen__4D94879B">
+        <Association Name="FK__tbFuncion__IdBen__70DDC3D8">
           <End Role="tbBeneficio" Type="Self.tbBeneficio" Multiplicity="0..1" />
           <End Role="tbFuncionarioBeneficio" Type="Self.tbFuncionarioBeneficio" Multiplicity="*" />
           <ReferentialConstraint>
@@ -228,7 +229,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbFuncion__IdFun__4CA06362">
+        <Association Name="FK__tbFuncion__IdFun__6FE99F9F">
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="0..1" />
           <End Role="tbFuncionarioBeneficio" Type="Self.tbFuncionarioBeneficio" Multiplicity="*" />
           <ReferentialConstraint>
@@ -252,7 +253,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbPonto__IdFunci__4222D4EF">
+        <Association Name="FK__tbPonto__IdFunci__5CD6CB2B">
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="0..1" />
           <End Role="tbPonto" Type="Self.tbPonto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -292,7 +293,7 @@
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbFerias" EntitySet="tbFerias" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbFuncion__IdBen__4D94879B" Association="Self.FK__tbFuncion__IdBen__4D94879B">
+          <AssociationSet Name="FK__tbFuncion__IdBen__70DDC3D8" Association="Self.FK__tbFuncion__IdBen__70DDC3D8">
             <End Role="tbBeneficio" EntitySet="tbBeneficio" />
             <End Role="tbFuncionarioBeneficio" EntitySet="tbFuncionarioBeneficio" />
           </AssociationSet>
@@ -304,7 +305,7 @@
             <End Role="tbEndereco" EntitySet="tbEndereco" />
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbFuncion__IdFun__4CA06362" Association="Self.FK__tbFuncion__IdFun__4CA06362">
+          <AssociationSet Name="FK__tbFuncion__IdFun__6FE99F9F" Association="Self.FK__tbFuncion__IdFun__6FE99F9F">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbFuncionarioBeneficio" EntitySet="tbFuncionarioBeneficio" />
           </AssociationSet>
@@ -312,7 +313,7 @@
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbHolerite" EntitySet="tbHolerite" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbPonto__IdFunci__4222D4EF" Association="Self.FK__tbPonto__IdFunci__4222D4EF">
+          <AssociationSet Name="FK__tbPonto__IdFunci__5CD6CB2B" Association="Self.FK__tbPonto__IdFunci__5CD6CB2B">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbPonto" EntitySet="tbPonto" />
           </AssociationSet>
@@ -444,6 +445,7 @@
           <Property Name="IdBeneficio" Type="Int32" />
           <NavigationProperty Name="tbBeneficio" Relationship="Self.FK__tbFuncion__IdBen__4D94879B" FromRole="tbFuncionarioBeneficio" ToRole="tbBeneficio" />
           <NavigationProperty Name="tbFuncionario" Relationship="Self.FK__tbFuncion__IdFun__4CA06362" FromRole="tbFuncionarioBeneficio" ToRole="tbFuncionario" />
+          <Property Name="Aprovado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="tbHolerite">
           <Key>
@@ -472,9 +474,9 @@
             <PropertyRef Name="IdPonto" />
           </Key>
           <Property Name="IdPonto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Data_entrada" Type="DateTime" Precision="0" />
-          <Property Name="Data_saida" Type="DateTime" Precision="0" />
-          <Property Name="Saida_almoco" Type="DateTime" Precision="0" />
+          <Property Name="Data_entrada" Type="DateTime" Precision="3" />
+          <Property Name="Data_saida" Type="DateTime" Precision="3" />
+          <Property Name="Saida_almoco" Type="DateTime" Precision="3" />
           <Property Name="Hora_extra" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Feriado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="IdFuncionario" Type="Int32" />
@@ -768,6 +770,7 @@
           <EntitySetMapping Name="tbFuncionarioBeneficio">
             <EntityTypeMapping TypeName="PowerTecModel.tbFuncionarioBeneficio">
               <MappingFragment StoreEntitySet="tbFuncionarioBeneficio">
+                <ScalarProperty Name="Aprovado" ColumnName="Aprovado" />
                 <ScalarProperty Name="IdFuncionarioBeneficio" ColumnName="IdFuncionarioBeneficio" />
                 <ScalarProperty Name="IdFuncionario" ColumnName="IdFuncionario" />
                 <ScalarProperty Name="IdBeneficio" ColumnName="IdBeneficio" />

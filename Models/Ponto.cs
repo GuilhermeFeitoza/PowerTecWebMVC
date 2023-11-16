@@ -16,8 +16,10 @@ namespace PowerTecWeb.Models
         public int IdPonto { get; set; }
 
         [DisplayName("Hora de entrada")]
+        [Required]
         public Nullable<System.DateTime> Data_entrada { get; set; }
         [DisplayName("Hora de saída")]
+        [Required]
         public Nullable<System.DateTime> Data_saida { get; set; }
         [DisplayName("Saída do almoço")]
         public Nullable<System.DateTime> Saida_almoco { get; set; }

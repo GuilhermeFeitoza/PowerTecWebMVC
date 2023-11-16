@@ -17,7 +17,8 @@ namespace PowerTecWeb.Controllers
         // GET: Pontos
         public ActionResult Index()
         {
-            var tbPonto = db.tbPonto.Include(t => t.tbFuncionario);
+            var id = Convert.ToInt32(Session["IdFuncionario"]);
+            var tbPonto = db.tbPonto.Include(t => t.tbFuncionario).Where(d=> d.IdFuncionario == id);
             return View(tbPonto.ToList());
         }
 
@@ -39,7 +40,7 @@ namespace PowerTecWeb.Controllers
         // GET: Pontos/Create
         public ActionResult Create()
         {
-            ViewBag.IdFuncionario = new SelectList(db.tbFuncionario, "IdFuncionario", "Nome_completo");
+            ViewBag.IdFuncionario = new SelectList(db.tbFuncionario, "IdFuncionario", "Nome_completo", Session["IdFuncionario"]);
             return View();
         }
 

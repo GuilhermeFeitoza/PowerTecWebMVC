@@ -29,11 +29,17 @@ namespace PowerTecWeb.Controllers
 
         public ActionResult LoginColaborador()
         {
-           
-            return View();
-          
+            if (Session["IdFuncionario"] != null)
+            {
+                return RedirectToAction("IndexColaborador", "AreaColaborador");
+            }
+            else
+            {
+                return View();
+            }
+
         }
-   
+
 
 
         public ActionResult Contato()

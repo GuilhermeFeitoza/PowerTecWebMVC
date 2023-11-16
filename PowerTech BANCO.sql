@@ -56,9 +56,9 @@ IdEndereco INT FOREIGN KEY REFERENCES tbEndereco(IdEndereco),
 GO
 CREATE TABLE tbPonto(
 IdPonto INT PRIMARY KEY IDENTITY,
-Data_entrada DATE ,
-Data_saida DATE,
-Saida_almoco DATE ,
+Data_entrada DATETIME,
+Data_saida DATETIME,
+Saida_almoco DATETIME ,
 Hora_extra CHAR(1)NOT NULL,
 Feriado CHAR(1)NOT NULL, --S OU N
 IdFuncionario INT FOREIGN KEY REFERENCES tbFuncionario(IdFuncionario),
@@ -91,6 +91,7 @@ CREATE TABLE tbFuncionarioBeneficio(
 IdFuncionarioBeneficio INT PRIMARY KEY IDENTITY,
 IdFuncionario INT FOREIGN KEY REFERENCES tbFuncionario(IdFuncionario),
 IdBeneficio INT FOREIGN KEY REFERENCES tbBeneficio(IdBeneficio),
+Aprovado CHAR(1),
 );
 GO
 CREATE TABLE tbDependente(

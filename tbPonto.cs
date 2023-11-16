@@ -9,12 +9,9 @@
 
 namespace PowerTecWeb
 {
-    using PowerTecWeb.Models;
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    [MetadataType(typeof(Ponto))]
+    
     public partial class tbPonto
     {
         public int IdPonto { get; set; }

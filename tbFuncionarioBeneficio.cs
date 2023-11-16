@@ -17,6 +17,7 @@ namespace PowerTecWeb
         public int IdFuncionarioBeneficio { get; set; }
         public Nullable<int> IdFuncionario { get; set; }
         public Nullable<int> IdBeneficio { get; set; }
+        public string Aprovado { get; set; }
     
         public virtual tbBeneficio tbBeneficio { get; set; }
         public virtual tbFuncionario tbFuncionario { get; set; }
