@@ -89,7 +89,8 @@ namespace PowerTecWeb.Controllers
             return View(tbBeneficio);
         }
 
-        // GET: Beneficios/Delete/5
+        // GET: Beneficios/
+        // /5
         public ActionResult Delete(int? id)
         {
             if (id == null)

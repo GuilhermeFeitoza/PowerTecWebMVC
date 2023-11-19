@@ -17,7 +17,7 @@ namespace PowerTecWeb.Controllers
         // GET: Funcionarios
         public ActionResult Index()
         {
-            var tbFuncionario = db.tbFuncionario.Include(t => t.tbCargo).Include(t => t.tbEndereco);
+            var tbFuncionario = db.tbFuncionario.Include(t => t.tbCargo);
             return View(tbFuncionario.ToList());
         }
 
@@ -35,78 +35,11 @@ namespace PowerTecWeb.Controllers
             }
             return View(tbFuncionario);
         }
-        public ActionResult MeuCadastro(int? id)
-        {
-            if (id == null)
-            {
-                return RedirectToAction("LoginColaborador","Home");
-            }
-            tbFuncionario tbFuncionario = db.tbFuncionario.Find(id);
-            if (tbFuncionario == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tbFuncionario);
-        }
-
-        public ActionResult MeusComprovantes(int? id) {
-            if (id == null)
-            {
-                return RedirectToAction("LoginColaborador", "Home");
-            }
-
-            var tbHolerite = db.tbHolerite.Include(t => t.tbFuncionario);
-            return View(tbHolerite.Where(d=>d.IdFuncionario == id).ToList());
-
-
-
-
-        }
-       
-        public ActionResult MeusChamados(int?id)
-        {
-            if(id == null)
-            {
-                return RedirectToAction("LoginColaborador", "Home");
-            }
-            var tbChamado = db.tbChamado.Include(t => t.tbFuncionario);
-            tbChamado = tbChamado.Where(d => d.IdFuncionario == id);
-            return View(tbChamado.ToList());
-        }
-
-        public ActionResult MinhasFerias(int? id)
-        {
-            if (id == null)
-            {
-                return RedirectToAction("LoginColaborador", "Home");
-            }
-            var tbFerias = db.tbFerias.Include(t => t.tbFuncionario);
-            tbFerias = tbFerias.Where(d => d.IdFuncionario == id);
-            return View(tbFerias.ToList());
-        }
-
-        public ActionResult Logout() {
-            Session.RemoveAll();
-            return RedirectToAction("Index","Home");
-        
-        }
-        public ActionResult MeuPonto(int? id)
-        {
-            if (id == null)
-            {
-                return RedirectToAction("LoginColaborador", "Home");
-            }
-            var tbPonto = db.tbPonto.Include(t => t.tbFuncionario);
-            tbPonto = tbPonto.Where(d => d.IdFuncionario == id);
-            return View(tbPonto.ToList());
-        }
-
 
         // GET: Funcionarios/Create
         public ActionResult Create()
         {
             ViewBag.IdCargo = new SelectList(db.tbCargo, "IdCargo", "Nome");
-            ViewBag.IdEndereco = new SelectList(db.tbEndereco, "IdEndereco", "Logradouro");
             return View();
         }
 
@@ -115,7 +48,7 @@ namespace PowerTecWeb.Controllers
         // obter mais detalhes, veja https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdFuncionario,Nome_completo,Cpf,Rg,Telefone,Email,Estado_civil,Salario,Data_admissao,Jornada_trabalho,Tipo_contrato,Banco_agencia,Numero_conta,NivelAcesso,Usuario,Senha,IdCargo,IdEndereco")] tbFuncionario tbFuncionario)
+        public ActionResult Create([Bind(Include = "IdFuncionario,Nome_completo,Cpf,Rg,Telefone,Email,Estado_civil,Salario,Data_admissao,Jornada_trabalho,Tipo_contrato,Banco_agencia,Numero_conta,NivelAcesso,IdCargo,Usuario,Senha,Logradouro,Numero,Complemento,Bairro,Cidade,Estado,Cep")] tbFuncionario tbFuncionario)
         {
             if (ModelState.IsValid)
             {
@@ -125,7 +58,6 @@ namespace PowerTecWeb.Controllers
             }
 
             ViewBag.IdCargo = new SelectList(db.tbCargo, "IdCargo", "Nome", tbFuncionario.IdCargo);
-            ViewBag.IdEndereco = new SelectList(db.tbEndereco, "IdEndereco", "Logradouro", tbFuncionario.IdEndereco);
             return View(tbFuncionario);
         }
 
@@ -142,7 +74,6 @@ namespace PowerTecWeb.Controllers
                 return HttpNotFound();
             }
             ViewBag.IdCargo = new SelectList(db.tbCargo, "IdCargo", "Nome", tbFuncionario.IdCargo);
-            ViewBag.IdEndereco = new SelectList(db.tbEndereco, "IdEndereco", "Logradouro", tbFuncionario.IdEndereco);
             return View(tbFuncionario);
         }
 
@@ -151,7 +82,7 @@ namespace PowerTecWeb.Controllers
         // obter mais detalhes, veja https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdFuncionario,Nome_completo,Cpf,Rg,Telefone,Email,Estado_civil,Salario,Data_admissao,Jornada_trabalho,Tipo_contrato,Banco_agencia,Numero_conta,NivelAcesso,IdCargo,IdEndereco")] tbFuncionario tbFuncionario)
+        public ActionResult Edit([Bind(Include = "IdFuncionario,Nome_completo,Cpf,Rg,Telefone,Email,Estado_civil,Salario,Data_admissao,Jornada_trabalho,Tipo_contrato,Banco_agencia,Numero_conta,NivelAcesso,IdCargo,Usuario,Senha,Logradouro,Numero,Complemento,Bairro,Cidade,Estado,Cep")] tbFuncionario tbFuncionario)
         {
             if (ModelState.IsValid)
             {
@@ -160,7 +91,6 @@ namespace PowerTecWeb.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.IdCargo = new SelectList(db.tbCargo, "IdCargo", "Nome", tbFuncionario.IdCargo);
-            ViewBag.IdEndereco = new SelectList(db.tbEndereco, "IdEndereco", "Logradouro", tbFuncionario.IdEndereco);
             return View(tbFuncionario);
         }
 

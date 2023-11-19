@@ -23,16 +23,7 @@ Data_criacao DATE,
 IdDepartamento INT FOREIGN KEY REFERENCES tbDepartamento(IdDepartamento)
 );
 GO
-CREATE TABLE tbEndereco(
-IdEndereco INT PRIMARY KEY IDENTITY,
-Logradouro VARCHAR(100) NOT NULL,
-Numero VARCHAR(10) NOT NULL,
-Complemento VARCHAR (100),
-Bairro VARCHAR(100) NOT NULL,
-Cidade VARCHAR(50) NOT NULL,
-Estado VARCHAR(50) NOT NULL,
-Cep VARCHAR(10) NOT NULL)
-GO
+
 CREATE TABLE tbFuncionario(
 IdFuncionario INT PRIMARY KEY IDENTITY,
 Nome_completo VARCHAR(100) NOT NULL,
@@ -51,7 +42,13 @@ Senha VARCHAR (30) NOT  NULL,
 Numero_conta VARCHAR(20) NOT NULL,
 NivelAcesso int,
 IdCargo INT FOREIGN KEY REFERENCES tbCargo(IdCargo),
-IdEndereco INT FOREIGN KEY REFERENCES tbEndereco(IdEndereco),
+Logradouro VARCHAR(100) NOT NULL,
+Numero VARCHAR(10) NOT NULL,
+Complemento VARCHAR (100),
+Bairro VARCHAR(100) NOT NULL,
+Cidade VARCHAR(50) NOT NULL,
+Estado VARCHAR(50) NOT NULL,
+Cep VARCHAR(10) NOT NULL
 )
 GO
 CREATE TABLE tbPonto(
@@ -104,7 +101,8 @@ IdFuncionario INT FOREIGN KEY REFERENCES tbFuncionario(IdFuncionario),
 GO
 CREATE TABLE tbHolerite(
 IdHolerite INT PRIMARY KEY IDENTITY,
-Periodo VARCHAR(50),
+DataInicial DATE,
+DataFinal DATE,
 Salario_base DECIMAL NOT NULL,
 Horas_extras DECIMAL NOT NULL,
 Comissoes DECIMAL NOT NULL,
@@ -120,3 +118,7 @@ Beneficios_adicionais DECIMAL NOT NULL,
 Outras_Informacoes varchar(1000),
 IdFuncionario INT FOREIGN KEY REFERENCES tbFuncionario(IdFuncionario)
 )
+
+SELECT*FROM tbHolerite
+
+

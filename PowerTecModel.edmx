@@ -57,19 +57,6 @@
           <Property Name="Cpf" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="IdFuncionario" Type="int" />
         </EntityType>
-        <EntityType Name="tbEndereco">
-          <Key>
-            <PropertyRef Name="IdEndereco" />
-          </Key>
-          <Property Name="IdEndereco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Logradouro" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Numero" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Complemento" Type="varchar" MaxLength="100" />
-          <Property Name="Bairro" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Cidade" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Cep" Type="varchar" MaxLength="10" Nullable="false" />
-        </EntityType>
         <EntityType Name="tbFerias">
           <Key>
             <PropertyRef Name="IdFerias" />
@@ -101,7 +88,13 @@
           <Property Name="Numero_conta" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="NivelAcesso" Type="int" />
           <Property Name="IdCargo" Type="int" />
-          <Property Name="IdEndereco" Type="int" />
+          <Property Name="Logradouro" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Numero" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Complemento" Type="varchar" MaxLength="100" />
+          <Property Name="Bairro" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cidade" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cep" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="tbFuncionarioBeneficio">
           <Key>
@@ -117,7 +110,8 @@
             <PropertyRef Name="IdHolerite" />
           </Key>
           <Property Name="IdHolerite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Periodo" Type="varchar" MaxLength="50" />
+          <Property Name="DataInicial" Type="date" />
+          <Property Name="DataFinal" Type="date" />
           <Property Name="Salario_base" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Horas_extras" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Comissoes" Type="decimal" Precision="18" Scale="0" Nullable="false" />
@@ -157,7 +151,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbChamado__IdFun__49C3F6B7">
+        <Association Name="FK__tbChamado__IdFun__681373AD">
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="0..1" />
           <End Role="tbChamado" Type="Self.tbChamado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -169,7 +163,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbDepende__IdFun__5070F446">
+        <Association Name="FK__tbDepende__IdFun__6EC0713C">
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="0..1" />
           <End Role="tbDependente" Type="Self.tbDependente" Multiplicity="*" />
           <ReferentialConstraint>
@@ -181,7 +175,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbFerias__IdFunc__46E78A0C">
+        <Association Name="FK__tbFerias__IdFunc__65370702">
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="0..1" />
           <End Role="tbFerias" Type="Self.tbFerias" Multiplicity="*" />
           <ReferentialConstraint>
@@ -193,7 +187,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbFuncion__IdBen__70DDC3D8">
+        <Association Name="FK__tbFuncion__IdBen__6BE40491">
           <End Role="tbBeneficio" Type="Self.tbBeneficio" Multiplicity="0..1" />
           <End Role="tbFuncionarioBeneficio" Type="Self.tbFuncionarioBeneficio" Multiplicity="*" />
           <ReferentialConstraint>
@@ -205,7 +199,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbFuncion__IdCar__3E52440B">
+        <Association Name="FK__tbFuncion__IdCar__5E8A0973">
           <End Role="tbCargo" Type="Self.tbCargo" Multiplicity="0..1" />
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -217,19 +211,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbFuncion__IdEnd__3F466844">
-          <End Role="tbEndereco" Type="Self.tbEndereco" Multiplicity="0..1" />
-          <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbEndereco">
-              <PropertyRef Name="IdEndereco" />
-            </Principal>
-            <Dependent Role="tbFuncionario">
-              <PropertyRef Name="IdEndereco" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__tbFuncion__IdFun__6FE99F9F">
+        <Association Name="FK__tbFuncion__IdFun__6AEFE058">
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="0..1" />
           <End Role="tbFuncionarioBeneficio" Type="Self.tbFuncionarioBeneficio" Multiplicity="*" />
           <ReferentialConstraint>
@@ -241,7 +223,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbHolerit__IdFun__534D60F1">
+        <Association Name="FK__tbHolerit__IdFun__719CDDE7">
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="0..1" />
           <End Role="tbHolerite" Type="Self.tbHolerite" Multiplicity="*" />
           <ReferentialConstraint>
@@ -253,7 +235,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbPonto__IdFunci__5CD6CB2B">
+        <Association Name="FK__tbPonto__IdFunci__6166761E">
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="0..1" />
           <End Role="tbPonto" Type="Self.tbPonto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -271,7 +253,6 @@
           <EntitySet Name="tbChamado" EntityType="Self.tbChamado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbDepartamento" EntityType="Self.tbDepartamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbDependente" EntityType="Self.tbDependente" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbEndereco" EntityType="Self.tbEndereco" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbFerias" EntityType="Self.tbFerias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbFuncionario" EntityType="Self.tbFuncionario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbFuncionarioBeneficio" EntityType="Self.tbFuncionarioBeneficio" Schema="dbo" store:Type="Tables" />
@@ -281,39 +262,35 @@
             <End Role="tbDepartamento" EntitySet="tbDepartamento" />
             <End Role="tbCargo" EntitySet="tbCargo" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbChamado__IdFun__49C3F6B7" Association="Self.FK__tbChamado__IdFun__49C3F6B7">
+          <AssociationSet Name="FK__tbChamado__IdFun__681373AD" Association="Self.FK__tbChamado__IdFun__681373AD">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbChamado" EntitySet="tbChamado" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbDepende__IdFun__5070F446" Association="Self.FK__tbDepende__IdFun__5070F446">
+          <AssociationSet Name="FK__tbDepende__IdFun__6EC0713C" Association="Self.FK__tbDepende__IdFun__6EC0713C">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbDependente" EntitySet="tbDependente" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbFerias__IdFunc__46E78A0C" Association="Self.FK__tbFerias__IdFunc__46E78A0C">
+          <AssociationSet Name="FK__tbFerias__IdFunc__65370702" Association="Self.FK__tbFerias__IdFunc__65370702">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbFerias" EntitySet="tbFerias" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbFuncion__IdBen__70DDC3D8" Association="Self.FK__tbFuncion__IdBen__70DDC3D8">
+          <AssociationSet Name="FK__tbFuncion__IdBen__6BE40491" Association="Self.FK__tbFuncion__IdBen__6BE40491">
             <End Role="tbBeneficio" EntitySet="tbBeneficio" />
             <End Role="tbFuncionarioBeneficio" EntitySet="tbFuncionarioBeneficio" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbFuncion__IdCar__3E52440B" Association="Self.FK__tbFuncion__IdCar__3E52440B">
+          <AssociationSet Name="FK__tbFuncion__IdCar__5E8A0973" Association="Self.FK__tbFuncion__IdCar__5E8A0973">
             <End Role="tbCargo" EntitySet="tbCargo" />
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbFuncion__IdEnd__3F466844" Association="Self.FK__tbFuncion__IdEnd__3F466844">
-            <End Role="tbEndereco" EntitySet="tbEndereco" />
-            <End Role="tbFuncionario" EntitySet="tbFuncionario" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tbFuncion__IdFun__6FE99F9F" Association="Self.FK__tbFuncion__IdFun__6FE99F9F">
+          <AssociationSet Name="FK__tbFuncion__IdFun__6AEFE058" Association="Self.FK__tbFuncion__IdFun__6AEFE058">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbFuncionarioBeneficio" EntitySet="tbFuncionarioBeneficio" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbHolerit__IdFun__534D60F1" Association="Self.FK__tbHolerit__IdFun__534D60F1">
+          <AssociationSet Name="FK__tbHolerit__IdFun__719CDDE7" Association="Self.FK__tbHolerit__IdFun__719CDDE7">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbHolerite" EntitySet="tbHolerite" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbPonto__IdFunci__5CD6CB2B" Association="Self.FK__tbPonto__IdFunci__5CD6CB2B">
+          <AssociationSet Name="FK__tbPonto__IdFunci__6166761E" Association="Self.FK__tbPonto__IdFunci__6166761E">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbPonto" EntitySet="tbPonto" />
           </AssociationSet>
@@ -380,20 +357,6 @@
           <Property Name="IdFuncionario" Type="Int32" />
           <NavigationProperty Name="tbFuncionario" Relationship="Self.FK__tbDepende__IdFun__5070F446" FromRole="tbDependente" ToRole="tbFuncionario" />
         </EntityType>
-        <EntityType Name="tbEndereco">
-          <Key>
-            <PropertyRef Name="IdEndereco" />
-          </Key>
-          <Property Name="IdEndereco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Logradouro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Numero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Complemento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Bairro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Cep" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tbFuncionario" Relationship="Self.FK__tbFuncion__IdEnd__3F466844" FromRole="tbEndereco" ToRole="tbFuncionario" />
-        </EntityType>
         <EntityType Name="tbFerias">
           <Key>
             <PropertyRef Name="IdFerias" />
@@ -424,17 +387,22 @@
           <Property Name="Numero_conta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NivelAcesso" Type="Int32" />
           <Property Name="IdCargo" Type="Int32" />
-          <Property Name="IdEndereco" Type="Int32" />
           <NavigationProperty Name="tbCargo" Relationship="Self.FK__tbFuncion__IdCar__3E52440B" FromRole="tbFuncionario" ToRole="tbCargo" />
           <NavigationProperty Name="tbChamado" Relationship="Self.FK__tbChamado__IdFun__49C3F6B7" FromRole="tbFuncionario" ToRole="tbChamado" />
           <NavigationProperty Name="tbDependente" Relationship="Self.FK__tbDepende__IdFun__5070F446" FromRole="tbFuncionario" ToRole="tbDependente" />
-          <NavigationProperty Name="tbEndereco" Relationship="Self.FK__tbFuncion__IdEnd__3F466844" FromRole="tbFuncionario" ToRole="tbEndereco" />
           <NavigationProperty Name="tbFerias" Relationship="Self.FK__tbFerias__IdFunc__46E78A0C" FromRole="tbFuncionario" ToRole="tbFerias" />
           <NavigationProperty Name="tbFuncionarioBeneficio" Relationship="Self.FK__tbFuncion__IdFun__4CA06362" FromRole="tbFuncionario" ToRole="tbFuncionarioBeneficio" />
           <NavigationProperty Name="tbHolerite" Relationship="Self.FK__tbHolerit__IdFun__534D60F1" FromRole="tbFuncionario" ToRole="tbHolerite" />
           <NavigationProperty Name="tbPonto" Relationship="Self.FK__tbPonto__IdFunci__4222D4EF" FromRole="tbFuncionario" ToRole="tbPonto" />
           <Property Name="Usuario" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Senha" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Logradouro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Numero" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Complemento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Bairro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Cidade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cep" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tbFuncionarioBeneficio">
           <Key>
@@ -452,7 +420,6 @@
             <PropertyRef Name="IdHolerite" />
           </Key>
           <Property Name="IdHolerite" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Periodo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Salario_base" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Horas_extras" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="Comissoes" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
@@ -468,6 +435,8 @@
           <Property Name="Outras_Informacoes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="IdFuncionario" Type="Int32" />
           <NavigationProperty Name="tbFuncionario" Relationship="Self.FK__tbHolerit__IdFun__534D60F1" FromRole="tbHolerite" ToRole="tbFuncionario" />
+          <Property Name="DataInicial" Type="DateTime" Precision="0" />
+          <Property Name="DataFinal" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="tbPonto">
           <Key>
@@ -542,18 +511,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbFuncion__IdEnd__3F466844">
-          <End Role="tbEndereco" Type="Self.tbEndereco" Multiplicity="0..1" />
-          <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbEndereco">
-              <PropertyRef Name="IdEndereco" />
-            </Principal>
-            <Dependent Role="tbFuncionario">
-              <PropertyRef Name="IdEndereco" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__tbFerias__IdFunc__46E78A0C">
           <End Role="tbFuncionario" Type="Self.tbFuncionario" Multiplicity="0..1" />
           <End Role="tbFerias" Type="Self.tbFerias" Multiplicity="*" />
@@ -608,7 +565,6 @@
           <EntitySet Name="tbChamado" EntityType="Self.tbChamado" />
           <EntitySet Name="tbDepartamento" EntityType="Self.tbDepartamento" />
           <EntitySet Name="tbDependente" EntityType="Self.tbDependente" />
-          <EntitySet Name="tbEndereco" EntityType="Self.tbEndereco" />
           <EntitySet Name="tbFerias" EntityType="Self.tbFerias" />
           <EntitySet Name="tbFuncionario" EntityType="Self.tbFuncionario" />
           <EntitySet Name="tbFuncionarioBeneficio" EntityType="Self.tbFuncionarioBeneficio" />
@@ -633,10 +589,6 @@
           <AssociationSet Name="FK__tbDepende__IdFun__5070F446" Association="Self.FK__tbDepende__IdFun__5070F446">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
             <End Role="tbDependente" EntitySet="tbDependente" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tbFuncion__IdEnd__3F466844" Association="Self.FK__tbFuncion__IdEnd__3F466844">
-            <End Role="tbEndereco" EntitySet="tbEndereco" />
-            <End Role="tbFuncionario" EntitySet="tbFuncionario" />
           </AssociationSet>
           <AssociationSet Name="FK__tbFerias__IdFunc__46E78A0C" Association="Self.FK__tbFerias__IdFunc__46E78A0C">
             <End Role="tbFuncionario" EntitySet="tbFuncionario" />
@@ -718,20 +670,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbEndereco">
-            <EntityTypeMapping TypeName="PowerTecModel.tbEndereco">
-              <MappingFragment StoreEntitySet="tbEndereco">
-                <ScalarProperty Name="IdEndereco" ColumnName="IdEndereco" />
-                <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
-                <ScalarProperty Name="Numero" ColumnName="Numero" />
-                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
-                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
-                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="Cep" ColumnName="Cep" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbFerias">
             <EntityTypeMapping TypeName="PowerTecModel.tbFerias">
               <MappingFragment StoreEntitySet="tbFerias">
@@ -746,6 +684,13 @@
           <EntitySetMapping Name="tbFuncionario">
             <EntityTypeMapping TypeName="PowerTecModel.tbFuncionario">
               <MappingFragment StoreEntitySet="tbFuncionario">
+                <ScalarProperty Name="Cep" ColumnName="Cep" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
                 <ScalarProperty Name="Senha" ColumnName="Senha" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
                 <ScalarProperty Name="IdFuncionario" ColumnName="IdFuncionario" />
@@ -763,7 +708,6 @@
                 <ScalarProperty Name="Numero_conta" ColumnName="Numero_conta" />
                 <ScalarProperty Name="NivelAcesso" ColumnName="NivelAcesso" />
                 <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
-                <ScalarProperty Name="IdEndereco" ColumnName="IdEndereco" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -780,8 +724,9 @@
           <EntitySetMapping Name="tbHolerite">
             <EntityTypeMapping TypeName="PowerTecModel.tbHolerite">
               <MappingFragment StoreEntitySet="tbHolerite">
+                <ScalarProperty Name="DataFinal" ColumnName="DataFinal" />
+                <ScalarProperty Name="DataInicial" ColumnName="DataInicial" />
                 <ScalarProperty Name="IdHolerite" ColumnName="IdHolerite" />
-                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
                 <ScalarProperty Name="Salario_base" ColumnName="Salario_base" />
                 <ScalarProperty Name="Horas_extras" ColumnName="Horas_extras" />
                 <ScalarProperty Name="Comissoes" ColumnName="Comissoes" />

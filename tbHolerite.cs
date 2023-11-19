@@ -15,7 +15,6 @@ namespace PowerTecWeb
     public partial class tbHolerite
     {
         public int IdHolerite { get; set; }
-        public string Periodo { get; set; }
         public decimal Salario_base { get; set; }
         public decimal Horas_extras { get; set; }
         public decimal Comissoes { get; set; }
@@ -30,6 +29,8 @@ namespace PowerTecWeb
         public decimal Beneficios_adicionais { get; set; }
         public string Outras_Informacoes { get; set; }
         public Nullable<int> IdFuncionario { get; set; }
+        public Nullable<System.DateTime> DataInicial { get; set; }
+        public Nullable<System.DateTime> DataFinal { get; set; }
     
         public virtual tbFuncionario tbFuncionario { get; set; }
     }

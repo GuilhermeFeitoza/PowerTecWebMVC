@@ -30,7 +30,6 @@ namespace PowerTecWeb
         public virtual DbSet<tbChamado> tbChamado { get; set; }
         public virtual DbSet<tbDepartamento> tbDepartamento { get; set; }
         public virtual DbSet<tbDependente> tbDependente { get; set; }
-        public virtual DbSet<tbEndereco> tbEndereco { get; set; }
         public virtual DbSet<tbFerias> tbFerias { get; set; }
         public virtual DbSet<tbFuncionario> tbFuncionario { get; set; }
         public virtual DbSet<tbFuncionarioBeneficio> tbFuncionarioBeneficio { get; set; }

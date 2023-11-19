@@ -54,7 +54,7 @@ namespace PowerTecWeb.Views.AreaGerente
             {
                 db.tbFerias.Add(tbFerias);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexColaborador", "AreaColaborador");
             }
 
             ViewBag.IdFuncionario = new SelectList(db.tbFuncionario, "IdFuncionario", "Nome_completo", tbFerias.IdFuncionario);
@@ -88,7 +88,7 @@ namespace PowerTecWeb.Views.AreaGerente
             {
                 db.Entry(tbFerias).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexColaborador", "AreaColaborador");
             }
             ViewBag.IdFuncionario = new SelectList(db.tbFuncionario, "IdFuncionario", "Nome_completo", tbFerias.IdFuncionario);
             return View(tbFerias);
@@ -117,7 +117,7 @@ namespace PowerTecWeb.Views.AreaGerente
             tbFerias tbFerias = db.tbFerias.Find(id);
             db.tbFerias.Remove(tbFerias);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("IndexColaborador", "AreaColaborador");
         }
 
         protected override void Dispose(bool disposing)

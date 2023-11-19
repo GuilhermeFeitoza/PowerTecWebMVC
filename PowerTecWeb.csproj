@@ -143,11 +143,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Beneficios.cs" />
-    <Compile Include="Models\FuncionarioBeneficios.cs" />
+    <Compile Include="Models\BeneficiosFuncionario.cs" />
     <Compile Include="Models\Cargo.cs" />
+    <Compile Include="Models\ComprovantesPagamento.cs" />
     <Compile Include="Models\Departamento.cs" />
     <Compile Include="Models\Ferias.cs" />
-    <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Ponto.cs" />
     <Compile Include="PowerTecModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -178,9 +178,6 @@
       <DependentUpon>PowerTecModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbDependente.cs">
-      <DependentUpon>PowerTecModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tbEndereco.cs">
       <DependentUpon>PowerTecModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbFerias.cs">
@@ -287,11 +284,6 @@
     <Content Include="Views\Beneficios\Details.cshtml" />
     <Content Include="Views\Beneficios\Edit.cshtml" />
     <Content Include="Views\Beneficios\Index.cshtml" />
-    <Content Include="Views\ComprovantesPagamento\Create.cshtml" />
-    <Content Include="Views\ComprovantesPagamento\Delete.cshtml" />
-    <Content Include="Views\ComprovantesPagamento\Details.cshtml" />
-    <Content Include="Views\ComprovantesPagamento\Edit.cshtml" />
-    <Content Include="Views\ComprovantesPagamento\Index.cshtml" />
     <Content Include="Views\Cargos\Create.cshtml" />
     <Content Include="Views\Cargos\Delete.cshtml" />
     <Content Include="Views\Cargos\Details.cshtml" />
@@ -302,11 +294,6 @@
     <Content Include="Views\Departamentos\Details.cshtml" />
     <Content Include="Views\Departamentos\Edit.cshtml" />
     <Content Include="Views\Departamentos\Index.cshtml" />
-    <Content Include="Views\Funcionarios\Create.cshtml" />
-    <Content Include="Views\Funcionarios\Delete.cshtml" />
-    <Content Include="Views\Funcionarios\Details.cshtml" />
-    <Content Include="Views\Funcionarios\Edit.cshtml" />
-    <Content Include="Views\Funcionarios\Index.cshtml" />
     <Content Include="Views\Funcionarios\MeuCadastro.cshtml" />
     <Content Include="Views\Chamados\Create.cshtml" />
     <Content Include="Views\Chamados\Delete.cshtml" />
@@ -326,7 +313,17 @@
     <Content Include="Views\BeneficiosFuncionario\Details.cshtml" />
     <Content Include="Views\BeneficiosFuncionario\Edit.cshtml" />
     <Content Include="Views\BeneficiosFuncionario\Index.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Create.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Delete.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Details.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Edit.cshtml" />
+    <Content Include="Views\ComprovantesPagamento\Index.cshtml" />
     <Content Include="Views\ComprovantesPagamento\MeusComprovantes.cshtml" />
+    <Content Include="Views\Funcionarios\Create.cshtml" />
+    <Content Include="Views\Funcionarios\Delete.cshtml" />
+    <Content Include="Views\Funcionarios\Details.cshtml" />
+    <Content Include="Views\Funcionarios\Edit.cshtml" />
+    <Content Include="Views\Funcionarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

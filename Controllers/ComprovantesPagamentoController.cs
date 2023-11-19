@@ -48,7 +48,7 @@ namespace PowerTecWeb.Controllers
         // obter mais detalhes, veja https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdHolerite,Periodo,Salario_base,Horas_extras,Comissoes,Outros_proventos,Total_proventos,Plano_saude,Vale_transporte,Total_deducoes,Valor_liquido,Ferias,Aviso_previo,Beneficios_adicionais,Outras_Informacoes,IdFuncionario")] tbHolerite tbHolerite)
+        public ActionResult Create([Bind(Include = "IdHolerite,DataInicial,DataFinal,Salario_base,Horas_extras,Comissoes,Outros_proventos,Total_proventos,Plano_saude,Vale_transporte,Total_deducoes,Valor_liquido,Ferias,Aviso_previo,Beneficios_adicionais,Outras_Informacoes,IdFuncionario")] tbHolerite tbHolerite)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace PowerTecWeb.Controllers
         // obter mais detalhes, veja https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdHolerite,Periodo,Salario_base,Horas_extras,Comissoes,Outros_proventos,Total_proventos,Plano_saude,Vale_transporte,Total_deducoes,Valor_liquido,Ferias,Aviso_previo,Beneficios_adicionais,Outras_Informacoes,IdFuncionario")] tbHolerite tbHolerite)
+        public ActionResult Edit([Bind(Include = "IdHolerite,DataInicial,DataFinal,Salario_base,Horas_extras,Comissoes,Outros_proventos,Total_proventos,Plano_saude,Vale_transporte,Total_deducoes,Valor_liquido,Ferias,Aviso_previo,Beneficios_adicionais,Outras_Informacoes,IdFuncionario")] tbHolerite tbHolerite)
         {
             if (ModelState.IsValid)
             {

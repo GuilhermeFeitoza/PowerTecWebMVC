@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="PowerTecModel.tbChamado" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PowerTecModel.tbDepartamento" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PowerTecModel.tbDependente" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PowerTecModel.tbEndereco" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PowerTecModel.tbFerias" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PowerTecModel.tbFuncionario" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PowerTecModel.tbFuncionarioBeneficio" Width="1.5" PointX="10.5" PointY="10.75" IsExpanded="true" />
@@ -21,7 +20,6 @@
         <AssociationConnector Association="PowerTecModel.FK__tbFuncion__IdCar__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="PowerTecModel.FK__tbChamado__IdFun__49C3F6B7" ManuallyRouted="false" />
         <AssociationConnector Association="PowerTecModel.FK__tbDepende__IdFun__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="PowerTecModel.FK__tbFuncion__IdEnd__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="PowerTecModel.FK__tbFerias__IdFunc__46E78A0C" ManuallyRouted="false" />
         <AssociationConnector Association="PowerTecModel.FK__tbFuncion__IdFun__4CA06362" ManuallyRouted="false" />
         <AssociationConnector Association="PowerTecModel.FK__tbHolerit__IdFun__534D60F1" ManuallyRouted="false" />

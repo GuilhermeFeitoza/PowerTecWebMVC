@@ -51,6 +51,7 @@ namespace PowerTecWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdFuncionarioBeneficio,IdFuncionario,IdBeneficio")] tbFuncionarioBeneficio tbFuncionarioBeneficio)
         {
+            tbFuncionarioBeneficio.Aprovado = "N";
             if (ModelState.IsValid)
             {
                 db.tbFuncionarioBeneficio.Add(tbFuncionarioBeneficio);
@@ -85,13 +86,13 @@ namespace PowerTecWeb.Controllers
         // obter mais detalhes, veja https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdFuncionarioBeneficio,IdFuncionario,IdBeneficio")] tbFuncionarioBeneficio tbFuncionarioBeneficio)
+        public ActionResult Edit([Bind(Include = "IdFuncionarioBeneficio,IdFuncionario,IdBeneficio,Aprovado")] tbFuncionarioBeneficio tbFuncionarioBeneficio)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(tbFuncionarioBeneficio).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexColaborador","AreaColaborador");
             }
             ViewBag.IdBeneficio = new SelectList(db.tbBeneficio, "IdBeneficio", "Nome", tbFuncionarioBeneficio.IdBeneficio);
             ViewBag.IdFuncionario = new SelectList(db.tbFuncionario, "IdFuncionario", "Nome_completo", tbFuncionarioBeneficio.IdFuncionario);
@@ -121,7 +122,7 @@ namespace PowerTecWeb.Controllers
             tbFuncionarioBeneficio tbFuncionarioBeneficio = db.tbFuncionarioBeneficio.Find(id);
             db.tbFuncionarioBeneficio.Remove(tbFuncionarioBeneficio);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("IndexColaborador","AreaColaborador");
         }
 
         protected override void Dispose(bool disposing)

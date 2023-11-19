@@ -16,25 +16,37 @@
             @Html.DisplayNameFor(model => model.tbBeneficio.Nome)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.tbBeneficio.Valor)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aprovado)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbBeneficio.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdFuncionarioBeneficio }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.IdFuncionarioBeneficio }) |
-            @Html.ActionLink("Deletar", "Delete", new { id=item.IdFuncionarioBeneficio })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbBeneficio.Nome)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbBeneficio.Valor)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Aprovado)
+    </td>
+    <td>
+        <a href="@Url.Action("Edit","BeneficiosFuncionario", new { id = item.IdFuncionarioBeneficio })"> Editar|</a>
+        <a href="@Url.Action("Details","BeneficiosFuncionario", new { id = item.IdFuncionarioBeneficio })"> Detalhes|</a>
+        @*<a href="@Url.Action("Delete","BeneficiosFuncionario", new { id = item.IdFuncionarioBeneficio }) "> Deletar|</a>*@
+    </td>
+</tr>
 }
 
 </table>

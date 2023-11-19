@@ -12,11 +12,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Periodo)
+            @Html.DisplayNameFor(model => model.DataInicial)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Periodo)
+            @Html.DisplayFor(model => model.DataInicial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFinal)
         </dd>
 
         <dt>
@@ -134,6 +142,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.IdHolerite }) |
-    @Html.ActionLink("Voltar", "Index")
+    @Html.ActionLink("Voltar", "IndexColaborador","AreaColaborador")
 </p>

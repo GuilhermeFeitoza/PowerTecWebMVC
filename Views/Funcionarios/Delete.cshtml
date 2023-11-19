@@ -7,9 +7,9 @@
 
 <h2>Delete</h2>
 
-<h3>Tem certeza que deseja excluir o item selecionado?</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Funcionário</h4>
+    <h4>tbFuncionario</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -117,19 +117,83 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logradouro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cep)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.tbCargo.Nome)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.tbCargo.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tbEndereco.Logradouro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tbEndereco.Logradouro)
         </dd>
 
     </dl>
@@ -139,7 +203,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Voltar", "Index")
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
 
-<h2>Detalhes</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Funcionario</h4>
+    <h4>tbFuncionario</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -116,6 +116,78 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logradouro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cep)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.tbCargo.Nome)
         </dt>
 
@@ -123,17 +195,9 @@
             @Html.DisplayFor(model => model.tbCargo.Nome)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tbEndereco.Logradouro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tbEndereco.Logradouro)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.IdFuncionario }) |
-    @Html.ActionLink("Voltar", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdFuncionario }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

@@ -15,7 +15,7 @@
                 <li class="list-group-item"><a href="@Url.Action("MinhasFerias","Funcionarios",new { id = Session["IdFuncionario"]})">Minhas Férias</a></li>
                 <li class="list-group-item"><a href="@Url.Action("Index","BeneficiosFuncionario",new { id = Session["IdFuncionario"]})">Meus Beneficios</a></li>
                 <li class="list-group-item"><a href="@Url.Action("MeusComprovantes","Funcionarios",new { id = Session["IdFuncionario"]})">Meus Comprovantes de Pagamento</a></li>
-                <li class="list-group-item"><a href="@Url.Action("Minhas declarações","Funcionarios",new { id = Session["IdFuncionario"]})">Minhas Declarações / Atualizar Carteira de Trabalho</a></li>
+                @*<li class="list-group-item"><a href="@Url.Action("Minhas declarações","Funcionarios",new { id = Session["IdFuncionario"]})">Minhas Declarações / Atualizar Carteira de Trabalho</a></li>*@
             </ul>
             @if (Convert.ToInt32(Session["Nivel"]) == 1)
             {
@@ -27,7 +27,7 @@
                     <li class="list-group-item"><a>@Html.ActionLink("Aprovar férias", "Index", "Ferias")</a></li>
                     <li class="list-group-item"><a>@Html.ActionLink("Beneficios", "Index", "Beneficios")</a></li>
                     <li class="list-group-item"><a>@Html.ActionLink("Chamados", "Index", "Chamados")</a></li>
-                    <li class="list-group-item"><a>@Html.ActionLink("Comprovante de pagamentos", "ComprovantePagamento", "AreaGerente")</a></li>
+                    <li class="list-group-item"><a>@Html.ActionLink("Comprovante de pagamentos", "Index", "ComprovantesPagamento")</a></li>
                 </ul>
             }
         </div>

@@ -40,16 +40,21 @@ namespace PowerTecWeb
         public string Numero_conta { get; set; }
         public Nullable<int> NivelAcesso { get; set; }
         public Nullable<int> IdCargo { get; set; }
-        public Nullable<int> IdEndereco { get; set; }
         public string Usuario { get; set; }
         public string Senha { get; set; }
+        public string Logradouro { get; set; }
+        public string Numero { get; set; }
+        public string Complemento { get; set; }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
+        public string Cep { get; set; }
     
         public virtual tbCargo tbCargo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbChamado> tbChamado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbDependente> tbDependente { get; set; }
-        public virtual tbEndereco tbEndereco { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbFerias> tbFerias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

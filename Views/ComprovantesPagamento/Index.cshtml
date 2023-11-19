@@ -13,9 +13,14 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Periodo)
+            @Html.DisplayNameFor(model => model.DataInicial)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DataFinal)
         </th>
         <th>
+
             @Html.DisplayNameFor(model => model.Salario_base)
         </th>
         <th>
@@ -61,58 +66,60 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Periodo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Salario_base)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Horas_extras)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comissoes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Outros_proventos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Total_proventos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Plano_saude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vale_transporte)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Total_deducoes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Valor_liquido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ferias)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Aviso_previo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Beneficios_adicionais)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Outras_Informacoes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdHolerite }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.IdHolerite }) |
-            @Html.ActionLink("Deletar", "Delete", new { id=item.IdHolerite })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DataInicial)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DataFinal)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Salario_base)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Horas_extras)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Comissoes)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Outros_proventos)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Total_proventos)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Plano_saude)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Vale_transporte)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Total_deducoes)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Valor_liquido)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ferias)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Aviso_previo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Beneficios_adicionais)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Outras_Informacoes)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
+    </td>
+    <td>
+        <a href="@Url.Action("Edit","ComprovantesPagamento", new { id = item.IdHolerite })"> Editar|</a>
+        <a href="@Url.Action("Details","ComprovantesPagamento", new { id = item.IdHolerite })"> Detalhes|</a>
+    </td>
+</tr>
 }
 
 </table>
