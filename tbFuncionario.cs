@@ -9,10 +9,11 @@
 
 namespace PowerTecWeb
 {
-    using PowerTecWeb.Models;
+    
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using PowerTecWeb.Models;
 
     [MetadataType(typeof(Funcionario))]
     public partial class tbFuncionario

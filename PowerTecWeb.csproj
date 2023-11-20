@@ -145,6 +145,7 @@
     <Compile Include="Models\Beneficios.cs" />
     <Compile Include="Models\BeneficiosFuncionario.cs" />
     <Compile Include="Models\Cargo.cs" />
+    <Compile Include="Models\Chamado.cs" />
     <Compile Include="Models\ComprovantesPagamento.cs" />
     <Compile Include="Models\Departamento.cs" />
     <Compile Include="Controllers\DependentesController.cs" />

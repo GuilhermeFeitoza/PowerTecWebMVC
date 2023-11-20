@@ -54,32 +54,3 @@
     </div>
 </div>
 
-
-<script>
-
-    window.onload = mascaraDeTelefone;
-    function mascaraDeTelefone() {
-        const textoAtual = document.getElementById("telefone").innerText;
-        const isCelular = textoAtual.length === 11;
-        let textoAjustado;
-        if (isCelular) {
-            const ddd = textoAtual.slice(0, 2);
-            const parte1 = textoAtual.slice(2, 7);
-            const parte2 = textoAtual.slice(7, 11);
-            textoAjustado = `(${ddd})${parte1}-${parte2}`
-        } else {
-            const parte1 = textoAtual.slice(0, 4);
-            const parte2 = textoAtual.slice(4, 8);
-            textoAjustado = `${parte1}-${parte2}`
-        }
-        document.getElementById("telefone").innerText = textoAjustado;
-    }
-
-    function tiraHifen(telefone) {
-        const textoAtual = telefone.value;
-        const textoAjustado = textoAtual.replace(/\-/g, '');
-
-        telefone.value = textoAjustado;
-    }
-
-</script>

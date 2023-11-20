@@ -9,9 +9,12 @@
 
 namespace PowerTecWeb
 {
+    using PowerTecWeb.Models;
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(Ferias))]
     public partial class tbFerias
     {
         public int IdFerias { get; set; }

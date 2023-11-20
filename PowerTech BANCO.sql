@@ -118,7 +118,3 @@ Beneficios_adicionais DECIMAL NOT NULL,
 Outras_Informacoes varchar(1000),
 IdFuncionario INT FOREIGN KEY REFERENCES tbFuncionario(IdFuncionario)
 )
-
-SELECT*FROM tbHolerite
-
-

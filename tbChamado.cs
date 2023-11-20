@@ -7,11 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace PowerTecWeb
 {
+    using PowerTecWeb.Models;
     using System;
     using System.Collections.Generic;
-    
+
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(Chamado))]
+
     public partial class tbChamado
     {
         public int IdChamado { get; set; }
