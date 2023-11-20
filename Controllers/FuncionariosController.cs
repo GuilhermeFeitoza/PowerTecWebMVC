@@ -40,6 +40,15 @@ namespace PowerTecWeb.Controllers
         public ActionResult Create()
         {
             ViewBag.IdCargo = new SelectList(db.tbCargo, "IdCargo", "Nome");
+
+            List<SelectListItem> items = new List<SelectListItem>();
+
+            items.Add(new SelectListItem { Text = "Funcionario", Value = "0" });
+
+            items.Add(new SelectListItem { Text = "Administrador", Value = "1" });
+
+
+            ViewBag.Niveis = items;
             return View();
         }
 
@@ -127,6 +136,89 @@ namespace PowerTecWeb.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult MeuCadastro(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
+            tbFuncionario tbFuncionario = db.tbFuncionario.Find(id);
+            if (tbFuncionario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tbFuncionario);
+        }
+        public ActionResult MeusDependentes(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
+            var tbDependente = db.tbDependente.Include(t => t.tbFuncionario);
+            tbDependente = tbDependente.Where(d => d.IdFuncionario == id);
+            if (tbDependente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tbDependente);
+        }
+
+
+        public ActionResult MeusComprovantes(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
+
+            var tbHolerite = db.tbHolerite.Include(t => t.tbFuncionario);
+            return View(tbHolerite.Where(d => d.IdFuncionario == id).ToList());
+
+
+
+
+        }
+
+        public ActionResult MeusChamados(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
+            var tbChamado = db.tbChamado.Include(t => t.tbFuncionario);
+            tbChamado = tbChamado.Where(d => d.IdFuncionario == id);
+            return View(tbChamado.ToList());
+        }
+
+        public ActionResult MinhasFerias(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
+            var tbFerias = db.tbFerias.Include(t => t.tbFuncionario);
+            tbFerias = tbFerias.Where(d => d.IdFuncionario == id);
+            return View(tbFerias.ToList());
+        }
+
+        public ActionResult Logout()
+        {
+            Session.RemoveAll();
+            return RedirectToAction("Index", "Home");
+
+        }
+        public ActionResult MeuPonto(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("LoginColaborador", "Home");
+            }
+            var tbPonto = db.tbPonto.Include(t => t.tbFuncionario);
+            tbPonto = tbPonto.Where(d => d.IdFuncionario == id);
+            return View(tbPonto.ToList());
         }
     }
 }

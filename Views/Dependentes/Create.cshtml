@@ -1,0 +1,70 @@
+﻿@model PowerTecWeb.tbDependente
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Cadastrar dependente</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Data_nascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Data_nascimento, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(model => model.Data_nascimento, "", new { @class = "text-danger" })
+            </div> 
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cpf, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Cpf, new { htmlAttributes = new { @class = "form-control cpf" } })
+                @Html.ValidationMessageFor(model => model.Cpf, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdFuncionario, "Funcionario", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdFuncionario", null, htmlAttributes: new { @class = "form-control" ,name = "outronome" })
+                @Html.HiddenFor(model => model.IdFuncionario)
+                @Html.ValidationMessageFor(model => model.IdFuncionario, "", new { @class = "text-danger" })
+             
+            </div>
+        
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "IndexColaborador","AreaColaborador")
+</div>
+<script>
+    $(document).ready(function ($) {
+        $('.cpf').mask('000.000.000-00')
+        $('.cep').mask('00000-000')
+        $('.telefone').mask('(00)00000-0000')
+
+    });
+</script>

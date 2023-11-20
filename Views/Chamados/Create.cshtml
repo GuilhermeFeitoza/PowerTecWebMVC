@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Data_chamado, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Data_chamado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Data_chamado, new { htmlAttributes = new { @class = "form-control",type = "date" } })
                 @Html.ValidationMessageFor(model => model.Data_chamado, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -51,7 +51,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
             </div>
         </div>
     </div>

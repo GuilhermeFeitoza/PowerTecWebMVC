@@ -147,7 +147,10 @@
     <Compile Include="Models\Cargo.cs" />
     <Compile Include="Models\ComprovantesPagamento.cs" />
     <Compile Include="Models\Departamento.cs" />
+    <Compile Include="Controllers\DependentesController.cs" />
+    <Compile Include="Models\Dependentes.cs" />
     <Compile Include="Models\Ferias.cs" />
+    <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Ponto.cs" />
     <Compile Include="PowerTecModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -246,6 +249,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.mask.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -324,6 +329,13 @@
     <Content Include="Views\Funcionarios\Details.cshtml" />
     <Content Include="Views\Funcionarios\Edit.cshtml" />
     <Content Include="Views\Funcionarios\Index.cshtml" />
+    <Content Include="Views\Dependentes\Create.cshtml" />
+    <Content Include="Views\Dependentes\Delete.cshtml" />
+    <Content Include="Views\Dependentes\Details.cshtml" />
+    <Content Include="Views\Dependentes\Edit.cshtml" />
+    <Content Include="Views\Dependentes\Index.cshtml" />
+    <Content Include="Views\Funcionarios\InserirDependente.cshtml" />
+    <Content Include="Views\Funcionarios\MeusDependentes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,53 @@
+﻿@model PowerTecWeb.tbDependente
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_nascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_nascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbFuncionario.Nome_completo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdDependente }) |
+    @Html.ActionLink("Voltar", "Index")
+    
+    
+</p>

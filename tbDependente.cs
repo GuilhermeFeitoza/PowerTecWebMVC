@@ -9,9 +9,12 @@
 
 namespace PowerTecWeb
 {
+    using PowerTecWeb.Models;
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+    [MetadataType(typeof(Dependentes))]
     public partial class tbDependente
     {
         public int IdDependente { get; set; }

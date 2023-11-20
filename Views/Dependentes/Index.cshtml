@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PowerTecWeb.tbDependente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_nascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_nascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdDependente }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdDependente }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdDependente })
+        </td>
+    </tr>
+}
+
+</table>

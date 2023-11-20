@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
 }
 
-<h2>Index</h2>
+
 
 <p>
     @Html.ActionLink("Novo", "Create")
@@ -43,8 +43,8 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.IdChamado }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdChamado }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdChamado })
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IdChamado }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.IdChamado })
         </td>
     </tr>
 }

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PowerTecWeb.tbDependente>
+
+@{
+    ViewBag.Title = "MeusDependentes";
+
+    Layout = "~/Views/Shared/_LayoutColaborador.cshtml";
+}
+
+<h2>Meus Dependentes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_nascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbFuncionario.Nome_completo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_nascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbFuncionario.Nome_completo)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.IdDependente }) |*@
+                <a href="@Url.Action("Edit","Dependentes",new { id = item.IdDependente})">Editar |</a>
+                <a href="@Url.Action("Details","Dependentes",new { id = item.IdDependente})">Detalhes |</a>
+            </td>
+        </tr>
+    }
+
+</table>
