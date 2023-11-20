@@ -110,9 +110,21 @@
             @Html.DisplayNameFor(model => model.NivelAcesso)
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NivelAcesso)
-        </dd>
+        @if (Model.NivelAcesso == 0)
+        {
+
+
+            <dd>
+                Funcionário
+            </dd>
+        }
+        else if(Model.NivelAcesso ==1)
+        {
+            <dd>
+                Gerente
+            </dd>
+
+        }
 
         <dt>
             @Html.DisplayNameFor(model => model.tbCargo.Nome)
