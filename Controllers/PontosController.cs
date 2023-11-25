@@ -59,7 +59,7 @@ namespace PowerTecWeb.Controllers
             }
 
             ViewBag.IdFuncionario = new SelectList(db.tbFuncionario, "IdFuncionario", "Nome_completo", tbPonto.IdFuncionario);
-            return View(tbPonto);
+            return RedirectToAction("MeuPonto","Funcionarios",new { id = Session["IdFuncionario"]});
         }
 
         // GET: Pontos/Edit/5
